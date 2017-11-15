@@ -1,0 +1,155 @@
+os: linux
+language: c
+dist: trusty
+group: stable
+compiler: gcc
+script: 
+  - tput setaf 2; printf "generic/alpine35\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/alpine36\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine36/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine36/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine36/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine36/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/arch\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/arch/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/arch/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/arch/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/arch/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/centos6\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos6/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyperv complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos6/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos6/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos6/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/centos7\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos7/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos7/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos7/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/centos7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/debian8\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian8/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian8/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian8/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian8/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/debian9\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/fedora25\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/fedora26\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/freebsd11\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/gentoo\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/openbsd6\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/opensuse42\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/opensuse42/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/opensuse42/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/opensuse42/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/opensuse42/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/oracle7\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/rhel7\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/ubuntu1604\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/ubuntu1610\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1610/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1610/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1610/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1610/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/ubuntu1704\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1704/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1704/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1704/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1704/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "generic/ubuntu1710\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1710/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1710/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1710/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/ubuntu1710/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-centos\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-centos6\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos6/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos6/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos6/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos6/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-centos7\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos7/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos7/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos7/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-centos7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-debian\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-fedora\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-ubuntu1604\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1604/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1604/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1604/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1604/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-ubuntu1610\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1610/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1610/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1610/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1610/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lavabit/magma-ubuntu1704\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1704/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1704/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1704/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lavabit/boxes/magma-ubuntu1704/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
+  - tput setaf 2; printf "lineage/lineage\n"; tput sgr0
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete.
+  - curl --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete.
