@@ -5,6 +5,10 @@ group: stable
 compiler: gcc
 env:
   - VERSION="1.2.38"
+notifications:
+  email:
+    on_success: never
+    on_failure: always
 script: 
   - tput setaf 2; printf "generic/alpine35\n"; tput sgr0
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete."
