@@ -3,6 +3,8 @@ language: c
 dist: trusty
 group: stable
 compiler: gcc
+env:
+  - PACKAGE_VERSION="1.3.4"
 script: 
   - tput setaf 2; printf "generic/alpine35\n"; tput sgr0
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete."
