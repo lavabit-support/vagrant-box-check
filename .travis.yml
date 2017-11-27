@@ -55,6 +55,11 @@ script:
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete."
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete."
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora26/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete."
+  - tput setaf 2; printf "generic/fedora27\n"; tput sgr0
+  - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora27/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete."
+  - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora27/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete."
+  - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora27/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "Virtualbox complete."
+  - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/fedora27/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "VMware complete."
   - tput setaf 2; printf "generic/freebsd11\n"; tput sgr0
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "Hyper-V complete."
   - curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent '${AGENT}' https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "Libvirt complete."
