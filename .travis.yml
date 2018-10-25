@@ -11,7 +11,7 @@ notifications:
     on_failure: always
 script:
   - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$!
-  - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "generic-alpine35-hyperv complete") & GENERIC_ALPINE35_HYPERV_PID=$! &
+  - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null ; echo "generic-alpine35-hyperv complete") & GENERIC_ALPINE35_HYPERV_PID=$!
   - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null ; echo "generic-alpine35-libvirt complete") & GENERIC_ALPINE35_LIBVIRT_PID=$!
   - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/virtualbox.box > /dev/null ; echo "generic-alpine35-virtualbox complete") & GENERIC_ALPINE35_VBOX_PID=$!
   - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/vmware_desktop.box > /dev/null ; echo "generic-alpine35-vmware complete") & GENERIC_ALPINE35_VMWARE_PID=$!
