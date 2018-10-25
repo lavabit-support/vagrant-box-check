@@ -10,7 +10,7 @@ notifications:
     on_success: never
     on_failure: always
 script:
-  - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$!
+  - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$! ; disown
   - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/1.8.38/providers/hyperv.box > /dev/null ; echo "generic-alpine35-hyperv complete") & GENERIC_ALPINE35_HYPERV_PID=$!
   - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/1.8.38/providers/libvirt.box > /dev/null ; echo "generic-alpine35-libvirt complete") & GENERIC_ALPINE35_LIBVIRT_PID=$!
   - (curl --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/1.8.38/providers/parallels.box > /dev/null ; echo "generic-alpine35-parallels complete") & GENERIC_ALPINE35_PARALLELS_PID=$!
