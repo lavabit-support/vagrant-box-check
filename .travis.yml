@@ -4,7 +4,7 @@ dist: trusty
 group: stable
 compiler: gcc
 env:
-  - VERSION="1.8.38"
+  - VERSION="1.8.28"
 notifications:
   email:
     on_success: never
@@ -624,4 +624,3 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
   - kill $LOOP_PID
-  
