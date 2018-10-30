@@ -647,4 +647,4 @@ script:
   - kill $LOOP_PID
   - export RESULT=`wc -l failure.log`
   - printf "\n\nVersion: $VERSION\nTotal Failures: $RESULT\n\n"
-  - if [ $RESULT != 0]; then exit 1 fi
+  - if [ $RESULT != 0 ]; then exit 1 fi
