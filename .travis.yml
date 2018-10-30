@@ -12,7 +12,6 @@ notifications:
 script:
   - export RESULT="0"
   - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$! ; disown
-  - set -x
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-alpine35-hyperv failed" && let RESULT+=1); echo "generic-alpine35-hyperv complete") & GENERIC_ALPINE35_HYPERV_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-alpine35-libvirt failed" && let RESULT+=1); echo "generic-alpine35-libvirt complete") & GENERIC_ALPINE35_LIBVIRT_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-alpine35-parallels failed" && let RESULT+=1); echo "generic-alpine35-parallels complete") & GENERIC_ALPINE35_PARALLELS_PID=$!
@@ -646,6 +645,7 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
   - kill $LOOP_PID
+  - echo Version: $VERSION
   - echo Total Failures: $RESULT
   - exit $RESULT
   
