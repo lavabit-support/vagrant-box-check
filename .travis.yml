@@ -4,6 +4,7 @@ dist: trusty
 group: stable
 compiler: gcc
 env:
+  - RESULT="0"
   - VERSION="1.8.40"
 notifications:
   email:
