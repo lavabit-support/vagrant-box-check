@@ -646,5 +646,5 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
   - kill $LOOP_PID
   - export RESULT=`wc -l failure.log`
-  - printf "\n\nVersion: $VERSION\nTotal Failures: $RESULT\n\n"
-  - if [ $RESULT != 0 ]; then exit 1 fi
+  - printf " \n\n  Version: $VERSION\n  Total Failures: $RESULT\n\n"
+  - [ $RESULT != 0 ] && exit 1
