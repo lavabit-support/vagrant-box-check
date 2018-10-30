@@ -645,5 +645,6 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
   - kill $LOOP_PID
+  - echo Total Failures: $RESULT
   - exit $RESULT
   
