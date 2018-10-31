@@ -648,6 +648,9 @@ script:
   - export RESULT=`cat failure.log | wc -l`
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
-  - cat failure.log
+  - echo ""
+  - cat failure.log | sort
+  - echo ""
+  - cat failure.log | wc -l
   - if [[ $RESULT != 0 ]]; then exit 1; fi
   
