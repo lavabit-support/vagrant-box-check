@@ -292,6 +292,10 @@ script:
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "lavabit-magma-debian-libvirt failed" | tee -a failure.log); echo "lavabit-magma-debian-libvirt complete") & LAVABIT_MAGMA_DEBIAN_LIBVIRT_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "lavabit-magma-debian-virtualbox failed" | tee -a failure.log); echo "lavabit-magma-debian-virtualbox complete") & LAVABIT_MAGMA_DEBIAN_VIRTUALBOX_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-debian/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "lavabit-magma-debian-vmware failed" | tee -a failure.log); echo "lavabit-magma-debian-vmware complete") & LAVABIT_MAGMA_DEBIAN_VMWARE_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-developer/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "lavabit-magma-developer-hyperv failed" | tee -a failure.log); echo "lavabit-magma-developer-hyperv complete") & LAVABIT_MAGMA_DEVELOPER_HYPERV_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-developer/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "lavabit-magma-developer-libvirt failed" | tee -a failure.log); echo "lavabit-magma-developer-libvirt complete") & LAVABIT_MAGMA_DEVELOPER_LIBVIRT_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-developer/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "lavabit-magma-developer-virtualbox failed" | tee -a failure.log); echo "lavabit-magma-developer-virtualbox complete") & LAVABIT_MAGMA_DEVELOPER_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-developer/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "lavabit-magma-developer-vmware failed" | tee -a failure.log); echo "lavabit-magma-developer-vmware complete") & LAVABIT_MAGMA_DEVELOPER_VMWARE_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "lavabit-magma-fedora-hyperv failed" | tee -a failure.log); echo "lavabit-magma-fedora-hyperv complete") & LAVABIT_MAGMA_FEDORA_HYPERV_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "lavabit-magma-fedora-libvirt failed" | tee -a failure.log); echo "lavabit-magma-fedora-libvirt complete") & LAVABIT_MAGMA_FEDORA_LIBVIRT_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma-fedora/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "lavabit-magma-fedora-virtualbox failed" | tee -a failure.log); echo "lavabit-magma-fedora-virtualbox complete") & LAVABIT_MAGMA_FEDORA_VIRTUALBOX_PID=$!
@@ -608,6 +612,10 @@ script:
   - wait $LAVABIT_MAGMA_DEBIAN_LIBVIRT_PID
   - wait $LAVABIT_MAGMA_DEBIAN_VIRTUALBOX_PID
   - wait $LAVABIT_MAGMA_DEBIAN_VMWARE_PID
+  - wait $LAVABIT_MAGMA_DEVELOPER_HYPERV_PID
+  - wait $LAVABIT_MAGMA_DEVELOPER_LIBVIRT_PID
+  - wait $LAVABIT_MAGMA_DEVELOPER_VIRTUALBOX_PID
+  - wait $LAVABIT_MAGMA_DEVELOPER_VMWARE_PID
   - wait $LAVABIT_MAGMA_FEDORA_HYPERV_PID
   - wait $LAVABIT_MAGMA_FEDORA_LIBVIRT_PID
   - wait $LAVABIT_MAGMA_FEDORA_VIRTUALBOX_PID
@@ -644,13 +652,8 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_LIBVIRT_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
+  - RESULT=`wc -l failure.log`
   - kill $LOOP_PID
-  - export RESULT=`cat failure.log | wc -l`
-  - echo "Version ${VERSION}"
-  - echo "Total Failures ${RESULT}"
-  - echo ""
-  - cat failure.log | sort
-  - echo ""
-  - cat failure.log | wc -l
-  - if [[ $RESULT != 0 ]]; then exit 1; fi
-  
+  - echo "Version: $VERSION"
+  - echo "Total Failures: $RESULT"
+  - exit $RESULT
