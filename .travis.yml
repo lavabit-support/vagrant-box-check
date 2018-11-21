@@ -4,7 +4,7 @@ dist: trusty
 group: stable
 compiler: gcc
 env:
-  - VERSION="1.8.40"
+  - VERSION="1.4.48"
 notifications:
   email:
     on_success: never
@@ -87,6 +87,11 @@ script:
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-freebsd11-parallels failed" | tee -a failure.log); echo "generic-freebsd11-parallels complete") & GENERIC_FREEBSD11_PARALLELS_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-freebsd11-virtualbox failed" | tee -a failure.log); echo "generic-freebsd11-virtualbox complete") & GENERIC_FREEBSD11_VIRTUALBOX_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd11/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-freebsd11-vmware failed" | tee -a failure.log); echo "generic-freebsd11-vmware complete") & GENERIC_FREEBSD11_VMWARE_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd12/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-freebsd12-hyperv failed" | tee -a failure.log); echo "generic-freebsd12-hyperv complete") & GENERIC_FREEBSD12_HYPERV_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd12/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-freebsd12-libvirt failed" | tee -a failure.log); echo "generic-freebsd12-libvirt complete") & GENERIC_FREEBSD12_LIBVIRT_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd12/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-freebsd12-parallels failed" | tee -a failure.log); echo "generic-freebsd12-parallels complete") & GENERIC_FREEBSD12_PARALLELS_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd12/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-freebsd12-virtualbox failed" | tee -a failure.log); echo "generic-freebsd12-virtualbox complete") & GENERIC_FREEBSD12_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/freebsd12/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-freebsd12-vmware failed" | tee -a failure.log); echo "generic-freebsd12-vmware complete") & GENERIC_FREEBSD12_VMWARE_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-gentoo-hyperv failed" | tee -a failure.log); echo "generic-gentoo-hyperv complete") & GENERIC_GENTOO_HYPERV_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-gentoo-libvirt failed" | tee -a failure.log); echo "generic-gentoo-libvirt complete") & GENERIC_GENTOO_LIBVIRT_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-gentoo-parallels failed" | tee -a failure.log); echo "generic-gentoo-parallels complete") & GENERIC_GENTOO_PARALLELS_PID=$!
@@ -217,6 +222,11 @@ script:
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd11/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-freebsd11-parallels failed" | tee -a failure.log); echo "roboxes-freebsd11-parallels complete") & ROBOXES_FREEBSD11_PARALLELS_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd11/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-freebsd11-virtualbox failed" | tee -a failure.log); echo "roboxes-freebsd11-virtualbox complete") & ROBOXES_FREEBSD11_VIRTUALBOX_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd11/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-freebsd11-vmware failed" | tee -a failure.log); echo "roboxes-freebsd11-vmware complete") & ROBOXES_FREEBSD11_VMWARE_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd12/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-freebsd12-hyperv failed" | tee -a failure.log); echo "roboxes-freebsd12-hyperv complete") & ROBOXES_FREEBSD12_HYPERV_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd12/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-freebsd12-libvirt failed" | tee -a failure.log); echo "roboxes-freebsd12-libvirt complete") & ROBOXES_FREEBSD12_LIBVIRT_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd12/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-freebsd12-parallels failed" | tee -a failure.log); echo "roboxes-freebsd12-parallels complete") & ROBOXES_FREEBSD12_PARALLELS_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd12/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-freebsd12-virtualbox failed" | tee -a failure.log); echo "roboxes-freebsd12-virtualbox complete") & ROBOXES_FREEBSD12_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/freebsd12/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-freebsd12-vmware failed" | tee -a failure.log); echo "roboxes-freebsd12-vmware complete") & ROBOXES_FREEBSD12_VMWARE_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/gentoo/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-gentoo-hyperv failed" | tee -a failure.log); echo "roboxes-gentoo-hyperv complete") & ROBOXES_GENTOO_HYPERV_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/gentoo/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-gentoo-libvirt failed" | tee -a failure.log); echo "roboxes-gentoo-libvirt complete") & ROBOXES_GENTOO_LIBVIRT_PID=$!
   - (curl --fail --silent --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/gentoo/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-gentoo-parallels failed" | tee -a failure.log); echo "roboxes-gentoo-parallels complete") & ROBOXES_GENTOO_PARALLELS_PID=$!
@@ -407,6 +417,11 @@ script:
   - wait $GENERIC_FREEBSD11_PARALLELS_PID
   - wait $GENERIC_FREEBSD11_VIRTUALBOX_PID
   - wait $GENERIC_FREEBSD11_VMWARE_PID
+  - wait $GENERIC_FREEBSD12_HYPERV_PID
+  - wait $GENERIC_FREEBSD12_LIBVIRT_PID
+  - wait $GENERIC_FREEBSD12_PARALLELS_PID
+  - wait $GENERIC_FREEBSD12_VIRTUALBOX_PID
+  - wait $GENERIC_FREEBSD12_VMWARE_PID
   - wait $GENERIC_GENTOO_HYPERV_PID
   - wait $GENERIC_GENTOO_LIBVIRT_PID
   - wait $GENERIC_GENTOO_PARALLELS_PID
@@ -537,6 +552,11 @@ script:
   - wait $ROBOXES_FREEBSD11_PARALLELS_PID
   - wait $ROBOXES_FREEBSD11_VIRTUALBOX_PID
   - wait $ROBOXES_FREEBSD11_VMWARE_PID
+  - wait $ROBOXES_FREEBSD12_HYPERV_PID
+  - wait $ROBOXES_FREEBSD12_LIBVIRT_PID
+  - wait $ROBOXES_FREEBSD12_PARALLELS_PID
+  - wait $ROBOXES_FREEBSD12_VIRTUALBOX_PID
+  - wait $ROBOXES_FREEBSD12_VMWARE_PID
   - wait $ROBOXES_GENTOO_HYPERV_PID
   - wait $ROBOXES_GENTOO_LIBVIRT_PID
   - wait $ROBOXES_GENTOO_PARALLELS_PID
