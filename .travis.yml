@@ -330,7 +330,7 @@ script:
   - wait $GENERIC_UBUNTU1810_PARALLELS_PID
   - wait $GENERIC_UBUNTU1810_VIRTUALBOX_PID
   - wait $GENERIC_UBUNTU1810_VMWARE_PID
-  - ifconfig eth0 | grep --extended-regexp --color=none "RX packets|TX packets"
+  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-alpine35-hyperv failed" | tee -a failure.log); echo "roboxes-alpine35-hyperv complete") & ROBOXES_ALPINE35_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-alpine35-libvirt failed" | tee -a failure.log); echo "roboxes-alpine35-libvirt complete") & ROBOXES_ALPINE35_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/alpine35/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-alpine35-parallels failed" | tee -a failure.log); echo "roboxes-alpine35-parallels complete") & ROBOXES_ALPINE35_PARALLELS_PID=$!
@@ -647,7 +647,7 @@ script:
   - wait $ROBOXES_UBUNTU1810_PARALLELS_PID
   - wait $ROBOXES_UBUNTU1810_VIRTUALBOX_PID
   - wait $ROBOXES_UBUNTU1810_VMWARE_PID
-  - ifconfig eth0 | grep --extended-regexp --color=none "RX packets|TX packets"
+  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "lavabit-magma-hyperv failed" | tee -a failure.log); echo "lavabit-magma-hyperv complete") & LAVABIT_MAGMA_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "lavabit-magma-libvirt failed" | tee -a failure.log); echo "lavabit-magma-libvirt complete") & LAVABIT_MAGMA_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "lavabit-magma-virtualbox failed" | tee -a failure.log); echo "lavabit-magma-virtualbox complete") & LAVABIT_MAGMA_VIRTUALBOX_PID=$!
@@ -769,7 +769,7 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
   - export RESULT=`cat failure.log | wc -l`
-  - ifconfig eth0 | grep --extended-regexp --color=none "RX packets|TX packets"
+  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - cat failure.log | sort
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
