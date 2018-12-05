@@ -770,4 +770,5 @@ script:
   - cat failure.log | sort
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
+  - ifconfig
   - if [[ $RESULT != 0 ]]; then exit 1; fi
