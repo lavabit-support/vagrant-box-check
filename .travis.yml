@@ -19,6 +19,6 @@ script:
   - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$! ; disown
   -  HASH=`curl --silent --location --retry 10 --retry-delay 120 --max-redirs 10 --user-agent "${AGENT}" https://vagrantcloud.com/$O/boxes/$B/versions/$V/providers/$P.box | sha256sum`
   - echo "$HASH" | grep --silent  "$H"
-  - if [ $? != 0 ]; then tput setaf 1; echo "FAIL  :  $O $B $P $V" | tee failure.log; tput sgr0; else echo "VALID :  $O $B $P $V"; fi
+  - if [[ $? != 0 ]]; then echo "FAIL  :  $O $B $P $V" | tee failure.log ; else echo "VALID :  $O $B $P $V" ; fi
   - export RESULT=`cat failure.log | wc -l`
   - if [[ $RESULT != 0 ]]; then exit 1; fi
