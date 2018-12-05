@@ -18,6 +18,6 @@ script:
   - touch failure.log
   - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$! ; disown
   -  HASH=`curl --silent --location --retry 10 --retry-delay 120 --max-redirs 10 --user-agent "${AGENT}" https://vagrantcloud.com/$O/boxes/$B/versions/$V/providers/$P.box | sha256sum`
-  - echo "$HASH | grep --silent  "$H"
+  - echo "$HASH" | grep --silent  "$H"
   - if [ $? != 0 ]; then printf "FAIL  :  $O $B $P $V\n"; exit 1 fi
   - printf "VALID :  $O $B $P $V\n"
