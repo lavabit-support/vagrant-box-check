@@ -4,7 +4,7 @@ dist: trusty
 group: stable
 compiler: gcc
 env:
-  - VERSION="1.8.48"
+  - VERSION="1.8.50"
 notifications:
   email:
     recipients:
@@ -59,6 +59,10 @@ script:
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-debian9-parallels failed" | tee -a failure.log); echo "generic-debian9-parallels complete") & GENERIC_DEBIAN9_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-debian9-virtualbox failed" | tee -a failure.log); echo "generic-debian9-virtualbox complete") & GENERIC_DEBIAN9_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/debian9/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-debian9-vmware failed" | tee -a failure.log); echo "generic-debian9-vmware complete") & GENERIC_DEBIAN9_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/dragonflybsd5/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-dragonflybsd5-libvirt failed" | tee -a failure.log); echo "generic-dragonflybsd5-libvirt complete") & GENERIC_DRAGONFLYBSD5_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/dragonflybsd5/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-dragonflybsd5-parallels failed" | tee -a failure.log); echo "generic-dragonflybsd5-parallels complete") & GENERIC_DRAGONFLYBSD5_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/dragonflybsd5/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-dragonflybsd5-virtualbox failed" | tee -a failure.log); echo "generic-dragonflybsd5-virtualbox complete") & GENERIC_DRAGONFLYBSD5_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/dragonflybsd5/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-dragonflybsd5-vmware failed" | tee -a failure.log); echo "generic-dragonflybsd5-vmware complete") & GENERIC_DRAGONFLYBSD5_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-fedora25-hyperv failed" | tee -a failure.log); echo "generic-fedora25-hyperv complete") & GENERIC_FEDORA25_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-fedora25-libvirt failed" | tee -a failure.log); echo "generic-fedora25-libvirt complete") & GENERIC_FEDORA25_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/fedora25/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-fedora25-parallels failed" | tee -a failure.log); echo "generic-fedora25-parallels complete") & GENERIC_FEDORA25_PARALLELS_PID=$!
@@ -99,6 +103,15 @@ script:
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-gentoo-parallels failed" | tee -a failure.log); echo "generic-gentoo-parallels complete") & GENERIC_GENTOO_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-gentoo-virtualbox failed" | tee -a failure.log); echo "generic-gentoo-virtualbox complete") & GENERIC_GENTOO_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/gentoo/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-gentoo-vmware failed" | tee -a failure.log); echo "generic-gentoo-vmware complete") & GENERIC_GENTOO_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/hardenedbsd11/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-hardenedbsd11-hyperv failed" | tee -a failure.log); echo "generic-hardenedbsd11-hyperv complete") & GENERIC_HARDENEDBSD11_HYPERV_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/hardenedbsd11/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-hardenedbsd11-libvirt failed" | tee -a failure.log); echo "generic-hardenedbsd11-libvirt complete") & GENERIC_HARDENEDBSD11_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/hardenedbsd11/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-hardenedbsd11-parallels failed" | tee -a failure.log); echo "generic-hardenedbsd11-parallels complete") & GENERIC_HARDENEDBSD11_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/hardenedbsd11/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-hardenedbsd11-virtualbox failed" | tee -a failure.log); echo "generic-hardenedbsd11-virtualbox complete") & GENERIC_HARDENEDBSD11_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/hardenedbsd11/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-hardenedbsd11-vmware failed" | tee -a failure.log); echo "generic-hardenedbsd11-vmware complete") & GENERIC_HARDENEDBSD11_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/netbsd8/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-netbsd8-libvirt failed" | tee -a failure.log); echo "generic-netbsd8-libvirt complete") & GENERIC_NETBSD8_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/netbsd8/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-netbsd8-parallels failed" | tee -a failure.log); echo "generic-netbsd8-parallels complete") & GENERIC_NETBSD8_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/netbsd8/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-netbsd8-virtualbox failed" | tee -a failure.log); echo "generic-netbsd8-virtualbox complete") & GENERIC_NETBSD8_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/netbsd8/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-netbsd8-vmware failed" | tee -a failure.log); echo "generic-netbsd8-vmware complete") & GENERIC_NETBSD8_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-openbsd6-hyperv failed" | tee -a failure.log); echo "generic-openbsd6-hyperv complete") & GENERIC_OPENBSD6_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-openbsd6-libvirt failed" | tee -a failure.log); echo "generic-openbsd6-libvirt complete") & GENERIC_OPENBSD6_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/openbsd6/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-openbsd6-parallels failed" | tee -a failure.log); echo "generic-openbsd6-parallels complete") & GENERIC_OPENBSD6_PARALLELS_PID=$!
@@ -114,11 +127,21 @@ script:
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-oracle7-parallels failed" | tee -a failure.log); echo "generic-oracle7-parallels complete") & GENERIC_ORACLE7_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-oracle7-virtualbox failed" | tee -a failure.log); echo "generic-oracle7-virtualbox complete") & GENERIC_ORACLE7_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/oracle7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-oracle7-vmware failed" | tee -a failure.log); echo "generic-oracle7-vmware complete") & GENERIC_ORACLE7_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel6/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-rhel6-hyperv failed" | tee -a failure.log); echo "generic-rhel6-hyperv complete") & GENERIC_RHEL6_HYPERV_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel6/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-rhel6-libvirt failed" | tee -a failure.log); echo "generic-rhel6-libvirt complete") & GENERIC_RHEL6_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel6/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-rhel6-parallels failed" | tee -a failure.log); echo "generic-rhel6-parallels complete") & GENERIC_RHEL6_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel6/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-rhel6-virtualbox failed" | tee -a failure.log); echo "generic-rhel6-virtualbox complete") & GENERIC_RHEL6_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel6/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-rhel6-vmware failed" | tee -a failure.log); echo "generic-rhel6-vmware complete") & GENERIC_RHEL6_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-rhel7-hyperv failed" | tee -a failure.log); echo "generic-rhel7-hyperv complete") & GENERIC_RHEL7_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-rhel7-libvirt failed" | tee -a failure.log); echo "generic-rhel7-libvirt complete") & GENERIC_RHEL7_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-rhel7-parallels failed" | tee -a failure.log); echo "generic-rhel7-parallels complete") & GENERIC_RHEL7_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-rhel7-virtualbox failed" | tee -a failure.log); echo "generic-rhel7-virtualbox complete") & GENERIC_RHEL7_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-rhel7-vmware failed" | tee -a failure.log); echo "generic-rhel7-vmware complete") & GENERIC_RHEL7_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel8/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-rhel8-hyperv failed" | tee -a failure.log); echo "generic-rhel8-hyperv complete") & GENERIC_RHEL8_HYPERV_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel8/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-rhel8-libvirt failed" | tee -a failure.log); echo "generic-rhel8-libvirt complete") & GENERIC_RHEL8_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel8/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-rhel8-parallels failed" | tee -a failure.log); echo "generic-rhel8-parallels complete") & GENERIC_RHEL8_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel8/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "generic-rhel8-virtualbox failed" | tee -a failure.log); echo "generic-rhel8-virtualbox complete") & GENERIC_RHEL8_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/rhel8/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "generic-rhel8-vmware failed" | tee -a failure.log); echo "generic-rhel8-vmware complete") & GENERIC_RHEL8_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-ubuntu1604-hyperv failed" | tee -a failure.log); echo "generic-ubuntu1604-hyperv complete") & GENERIC_UBUNTU1604_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-ubuntu1604-libvirt failed" | tee -a failure.log); echo "generic-ubuntu1604-libvirt complete") & GENERIC_UBUNTU1604_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/ubuntu1604/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "generic-ubuntu1604-parallels failed" | tee -a failure.log); echo "generic-ubuntu1604-parallels complete") & GENERIC_UBUNTU1604_PARALLELS_PID=$!
@@ -194,6 +217,10 @@ script:
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/debian9/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-debian9-parallels failed" | tee -a failure.log); echo "roboxes-debian9-parallels complete") & ROBOXES_DEBIAN9_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/debian9/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-debian9-virtualbox failed" | tee -a failure.log); echo "roboxes-debian9-virtualbox complete") & ROBOXES_DEBIAN9_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/debian9/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-debian9-vmware failed" | tee -a failure.log); echo "roboxes-debian9-vmware complete") & ROBOXES_DEBIAN9_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/dragonflybsd5/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-dragonflybsd5-libvirt failed" | tee -a failure.log); echo "roboxes-dragonflybsd5-libvirt complete") & ROBOXES_DRAGONFLYBSD5_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/dragonflybsd5/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-dragonflybsd5-parallels failed" | tee -a failure.log); echo "roboxes-dragonflybsd5-parallels complete") & ROBOXES_DRAGONFLYBSD5_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/dragonflybsd5/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-dragonflybsd5-virtualbox failed" | tee -a failure.log); echo "roboxes-dragonflybsd5-virtualbox complete") & ROBOXES_DRAGONFLYBSD5_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/dragonflybsd5/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-dragonflybsd5-vmware failed" | tee -a failure.log); echo "roboxes-dragonflybsd5-vmware complete") & ROBOXES_DRAGONFLYBSD5_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/fedora25/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-fedora25-hyperv failed" | tee -a failure.log); echo "roboxes-fedora25-hyperv complete") & ROBOXES_FEDORA25_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/fedora25/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-fedora25-libvirt failed" | tee -a failure.log); echo "roboxes-fedora25-libvirt complete") & ROBOXES_FEDORA25_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/fedora25/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-fedora25-parallels failed" | tee -a failure.log); echo "roboxes-fedora25-parallels complete") & ROBOXES_FEDORA25_PARALLELS_PID=$!
@@ -234,6 +261,15 @@ script:
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/gentoo/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-gentoo-parallels failed" | tee -a failure.log); echo "roboxes-gentoo-parallels complete") & ROBOXES_GENTOO_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/gentoo/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-gentoo-virtualbox failed" | tee -a failure.log); echo "roboxes-gentoo-virtualbox complete") & ROBOXES_GENTOO_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/gentoo/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-gentoo-vmware failed" | tee -a failure.log); echo "roboxes-gentoo-vmware complete") & ROBOXES_GENTOO_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/hardenedbsd11/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-hardenedbsd11-hyperv failed" | tee -a failure.log); echo "roboxes-hardenedbsd11-hyperv complete") & ROBOXES_HARDENEDBSD11_HYPERV_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/hardenedbsd11/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-hardenedbsd11-libvirt failed" | tee -a failure.log); echo "roboxes-hardenedbsd11-libvirt complete") & ROBOXES_HARDENEDBSD11_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/hardenedbsd11/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-hardenedbsd11-parallels failed" | tee -a failure.log); echo "roboxes-hardenedbsd11-parallels complete") & ROBOXES_HARDENEDBSD11_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/hardenedbsd11/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-hardenedbsd11-virtualbox failed" | tee -a failure.log); echo "roboxes-hardenedbsd11-virtualbox complete") & ROBOXES_HARDENEDBSD11_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/hardenedbsd11/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-hardenedbsd11-vmware failed" | tee -a failure.log); echo "roboxes-hardenedbsd11-vmware complete") & ROBOXES_HARDENEDBSD11_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/netbsd8/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-netbsd8-libvirt failed" | tee -a failure.log); echo "roboxes-netbsd8-libvirt complete") & ROBOXES_NETBSD8_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/netbsd8/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-netbsd8-parallels failed" | tee -a failure.log); echo "roboxes-netbsd8-parallels complete") & ROBOXES_NETBSD8_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/netbsd8/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-netbsd8-virtualbox failed" | tee -a failure.log); echo "roboxes-netbsd8-virtualbox complete") & ROBOXES_NETBSD8_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/netbsd8/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-netbsd8-vmware failed" | tee -a failure.log); echo "roboxes-netbsd8-vmware complete") & ROBOXES_NETBSD8_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/openbsd6/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-openbsd6-hyperv failed" | tee -a failure.log); echo "roboxes-openbsd6-hyperv complete") & ROBOXES_OPENBSD6_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/openbsd6/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-openbsd6-libvirt failed" | tee -a failure.log); echo "roboxes-openbsd6-libvirt complete") & ROBOXES_OPENBSD6_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/openbsd6/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-openbsd6-parallels failed" | tee -a failure.log); echo "roboxes-openbsd6-parallels complete") & ROBOXES_OPENBSD6_PARALLELS_PID=$!
@@ -249,11 +285,21 @@ script:
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/oracle7/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-oracle7-parallels failed" | tee -a failure.log); echo "roboxes-oracle7-parallels complete") & ROBOXES_ORACLE7_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/oracle7/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-oracle7-virtualbox failed" | tee -a failure.log); echo "roboxes-oracle7-virtualbox complete") & ROBOXES_ORACLE7_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/oracle7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-oracle7-vmware failed" | tee -a failure.log); echo "roboxes-oracle7-vmware complete") & ROBOXES_ORACLE7_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel6/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-rhel6-hyperv failed" | tee -a failure.log); echo "roboxes-rhel6-hyperv complete") & ROBOXES_RHEL6_HYPERV_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel6/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-rhel6-libvirt failed" | tee -a failure.log); echo "roboxes-rhel6-libvirt complete") & ROBOXES_RHEL6_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel6/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-rhel6-parallels failed" | tee -a failure.log); echo "roboxes-rhel6-parallels complete") & ROBOXES_RHEL6_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel6/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-rhel6-virtualbox failed" | tee -a failure.log); echo "roboxes-rhel6-virtualbox complete") & ROBOXES_RHEL6_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel6/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-rhel6-vmware failed" | tee -a failure.log); echo "roboxes-rhel6-vmware complete") & ROBOXES_RHEL6_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel7/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-rhel7-hyperv failed" | tee -a failure.log); echo "roboxes-rhel7-hyperv complete") & ROBOXES_RHEL7_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel7/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-rhel7-libvirt failed" | tee -a failure.log); echo "roboxes-rhel7-libvirt complete") & ROBOXES_RHEL7_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel7/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-rhel7-parallels failed" | tee -a failure.log); echo "roboxes-rhel7-parallels complete") & ROBOXES_RHEL7_PARALLELS_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel7/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-rhel7-virtualbox failed" | tee -a failure.log); echo "roboxes-rhel7-virtualbox complete") & ROBOXES_RHEL7_VIRTUALBOX_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel7/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-rhel7-vmware failed" | tee -a failure.log); echo "roboxes-rhel7-vmware complete") & ROBOXES_RHEL7_VMWARE_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel8/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-rhel8-hyperv failed" | tee -a failure.log); echo "roboxes-rhel8-hyperv complete") & ROBOXES_RHEL8_HYPERV_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel8/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-rhel8-libvirt failed" | tee -a failure.log); echo "roboxes-rhel8-libvirt complete") & ROBOXES_RHEL8_LIBVIRT_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel8/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-rhel8-parallels failed" | tee -a failure.log); echo "roboxes-rhel8-parallels complete") & ROBOXES_RHEL8_PARALLELS_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel8/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "roboxes-rhel8-virtualbox failed" | tee -a failure.log); echo "roboxes-rhel8-virtualbox complete") & ROBOXES_RHEL8_VIRTUALBOX_PID=$!
+  - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/rhel8/versions/${VERSION}/providers/vmware_desktop.box > /dev/null || (echo "roboxes-rhel8-vmware failed" | tee -a failure.log); echo "roboxes-rhel8-vmware complete") & ROBOXES_RHEL8_VMWARE_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/ubuntu1604/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-ubuntu1604-hyperv failed" | tee -a failure.log); echo "roboxes-ubuntu1604-hyperv complete") & ROBOXES_UBUNTU1604_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/ubuntu1604/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-ubuntu1604-libvirt failed" | tee -a failure.log); echo "roboxes-ubuntu1604-libvirt complete") & ROBOXES_UBUNTU1604_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/ubuntu1604/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-ubuntu1604-parallels failed" | tee -a failure.log); echo "roboxes-ubuntu1604-parallels complete") & ROBOXES_UBUNTU1604_PARALLELS_PID=$!
@@ -389,6 +435,10 @@ script:
   - wait $GENERIC_DEBIAN9_PARALLELS_PID
   - wait $GENERIC_DEBIAN9_VIRTUALBOX_PID
   - wait $GENERIC_DEBIAN9_VMWARE_PID
+  - wait $GENERIC_DRAGONFLYBSD5_LIBVIRT_PID
+  - wait $GENERIC_DRAGONFLYBSD5_PARALLELS_PID
+  - wait $GENERIC_DRAGONFLYBSD5_VIRTUALBOX_PID
+  - wait $GENERIC_DRAGONFLYBSD5_VMWARE_PID
   - wait $GENERIC_FEDORA25_HYPERV_PID
   - wait $GENERIC_FEDORA25_LIBVIRT_PID
   - wait $GENERIC_FEDORA25_PARALLELS_PID
@@ -429,6 +479,15 @@ script:
   - wait $GENERIC_GENTOO_PARALLELS_PID
   - wait $GENERIC_GENTOO_VIRTUALBOX_PID
   - wait $GENERIC_GENTOO_VMWARE_PID
+  - wait $GENERIC_HARDENEDBSD11_HYPERV_PID
+  - wait $GENERIC_HARDENEDBSD11_LIBVIRT_PID
+  - wait $GENERIC_HARDENEDBSD11_PARALLELS_PID
+  - wait $GENERIC_HARDENEDBSD11_VIRTUALBOX_PID
+  - wait $GENERIC_HARDENEDBSD11_VMWARE_PID
+  - wait $GENERIC_NETBSD8_LIBVIRT_PID
+  - wait $GENERIC_NETBSD8_PARALLELS_PID
+  - wait $GENERIC_NETBSD8_VIRTUALBOX_PID
+  - wait $GENERIC_NETBSD8_VMWARE_PID
   - wait $GENERIC_OPENBSD6_HYPERV_PID
   - wait $GENERIC_OPENBSD6_LIBVIRT_PID
   - wait $GENERIC_OPENBSD6_PARALLELS_PID
@@ -444,11 +503,21 @@ script:
   - wait $GENERIC_ORACLE7_PARALLELS_PID
   - wait $GENERIC_ORACLE7_VIRTUALBOX_PID
   - wait $GENERIC_ORACLE7_VMWARE_PID
+  - wait $GENERIC_RHEL6_HYPERV_PID
+  - wait $GENERIC_RHEL6_LIBVIRT_PID
+  - wait $GENERIC_RHEL6_PARALLELS_PID
+  - wait $GENERIC_RHEL6_VIRTUALBOX_PID
+  - wait $GENERIC_RHEL6_VMWARE_PID
   - wait $GENERIC_RHEL7_HYPERV_PID
   - wait $GENERIC_RHEL7_LIBVIRT_PID
   - wait $GENERIC_RHEL7_PARALLELS_PID
   - wait $GENERIC_RHEL7_VIRTUALBOX_PID
   - wait $GENERIC_RHEL7_VMWARE_PID
+  - wait $GENERIC_RHEL8_HYPERV_PID
+  - wait $GENERIC_RHEL8_LIBVIRT_PID
+  - wait $GENERIC_RHEL8_PARALLELS_PID
+  - wait $GENERIC_RHEL8_VIRTUALBOX_PID
+  - wait $GENERIC_RHEL8_VMWARE_PID
   - wait $GENERIC_UBUNTU1604_HYPERV_PID
   - wait $GENERIC_UBUNTU1604_LIBVIRT_PID
   - wait $GENERIC_UBUNTU1604_PARALLELS_PID
@@ -524,6 +593,10 @@ script:
   - wait $ROBOXES_DEBIAN9_PARALLELS_PID
   - wait $ROBOXES_DEBIAN9_VIRTUALBOX_PID
   - wait $ROBOXES_DEBIAN9_VMWARE_PID
+  - wait $ROBOXES_DRAGONFLYBSD5_LIBVIRT_PID
+  - wait $ROBOXES_DRAGONFLYBSD5_PARALLELS_PID
+  - wait $ROBOXES_DRAGONFLYBSD5_VIRTUALBOX_PID
+  - wait $ROBOXES_DRAGONFLYBSD5_VMWARE_PID
   - wait $ROBOXES_FEDORA25_HYPERV_PID
   - wait $ROBOXES_FEDORA25_LIBVIRT_PID
   - wait $ROBOXES_FEDORA25_PARALLELS_PID
@@ -564,6 +637,15 @@ script:
   - wait $ROBOXES_GENTOO_PARALLELS_PID
   - wait $ROBOXES_GENTOO_VIRTUALBOX_PID
   - wait $ROBOXES_GENTOO_VMWARE_PID
+  - wait $ROBOXES_HARDENEDBSD11_HYPERV_PID
+  - wait $ROBOXES_HARDENEDBSD11_LIBVIRT_PID
+  - wait $ROBOXES_HARDENEDBSD11_PARALLELS_PID
+  - wait $ROBOXES_HARDENEDBSD11_VIRTUALBOX_PID
+  - wait $ROBOXES_HARDENEDBSD11_VMWARE_PID
+  - wait $ROBOXES_NETBSD8_LIBVIRT_PID
+  - wait $ROBOXES_NETBSD8_PARALLELS_PID
+  - wait $ROBOXES_NETBSD8_VIRTUALBOX_PID
+  - wait $ROBOXES_NETBSD8_VMWARE_PID
   - wait $ROBOXES_OPENBSD6_HYPERV_PID
   - wait $ROBOXES_OPENBSD6_LIBVIRT_PID
   - wait $ROBOXES_OPENBSD6_PARALLELS_PID
@@ -579,11 +661,21 @@ script:
   - wait $ROBOXES_ORACLE7_PARALLELS_PID
   - wait $ROBOXES_ORACLE7_VIRTUALBOX_PID
   - wait $ROBOXES_ORACLE7_VMWARE_PID
+  - wait $ROBOXES_RHEL6_HYPERV_PID
+  - wait $ROBOXES_RHEL6_LIBVIRT_PID
+  - wait $ROBOXES_RHEL6_PARALLELS_PID
+  - wait $ROBOXES_RHEL6_VIRTUALBOX_PID
+  - wait $ROBOXES_RHEL6_VMWARE_PID
   - wait $ROBOXES_RHEL7_HYPERV_PID
   - wait $ROBOXES_RHEL7_LIBVIRT_PID
   - wait $ROBOXES_RHEL7_PARALLELS_PID
   - wait $ROBOXES_RHEL7_VIRTUALBOX_PID
   - wait $ROBOXES_RHEL7_VMWARE_PID
+  - wait $ROBOXES_RHEL8_HYPERV_PID
+  - wait $ROBOXES_RHEL8_LIBVIRT_PID
+  - wait $ROBOXES_RHEL8_PARALLELS_PID
+  - wait $ROBOXES_RHEL8_VIRTUALBOX_PID
+  - wait $ROBOXES_RHEL8_VMWARE_PID
   - wait $ROBOXES_UBUNTU1604_HYPERV_PID
   - wait $ROBOXES_UBUNTU1604_LIBVIRT_PID
   - wait $ROBOXES_UBUNTU1604_PARALLELS_PID
@@ -679,4 +771,3 @@ script:
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
   - if [[ $RESULT != 0 ]]; then exit 1; fi
-
