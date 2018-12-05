@@ -17,10 +17,6 @@ notifications:
 script:
   - touch failure.log
   - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$! ; disown
-  - function download() { HASH=`curl --silent --location --retry 10 --retry-delay 120 --max-redirs 10 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum` ; echo "$HASH" | grep --silent  "$5" ; if [ $? != 0 ]; then printf "FAIL  :  $1 $2 $3 $4\n" | tee -a failure.log; elif [[ "$SILENT" != "yes" ]]; then printf "VALID :  $1 $2 $3 $4\n"; fi }
-  - download $O $B $P $V $H
-  - export RESULT=`cat failure.log | wc -l`
-  - cat failure.log | sort
-  - echo "Version ${VERSION}"
-  - echo "Total Failures ${RESULT}"
-  - if [[ $RESULT != 0 ]]; then exit 1; fi
+  -  HASH=`curl --silent --location --retry 10 --retry-delay 120 --max-redirs 10 --user-agent "${AGENT}" https://vagrantcloud.com/$O/boxes/$B/versions/$V/providers/$P.box | sha256sum` ; echo "$HASH | grep --silent  "$H"
+  - if [ $? != 0 ]; then printf "FAIL  :  $O $B $P $V\n"; exit 1 fi
+  - printf "VALID :  $O $B $P $V\n"
