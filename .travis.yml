@@ -4,10 +4,60 @@ dist: trusty
 group: stable
 compiler: gcc
 env:
+  - O=generic B=alpine35 P=hyperv V=1.8.50 H=1beb160f99dce144ddd28f37d00de466f1d730a8e0af94fee57e0493302f8b1f
+  - O=generic B=alpine35 P=libvirt V=1.8.50 H=be1526c1fcd1bebe40a7bc6d0e963e0f520914d74a68bea793e5c03d0aaa0181
+  - O=generic B=alpine35 P=parallels V=1.8.50 H=d8838619c81df6f1a1ddf713a0b980365cfd5998db0e4442171402b5014cf32b
+  - O=generic B=alpine35 P=virtualbox V=1.8.50 H=361308b66a2fa9e2b18ee0a0bbddc1b3b7f989d5dd74b0e3b5d34d5258e19ffd
+  - O=generic B=alpine35 P=vmware_desktop V=1.8.50 H=c5ed5d38b6e96ddbf2e06de6ea98743fb1648b1141959392283a57fdd348fa4a
+  - O=generic B=alpine36 P=hyperv V=1.8.50 H=49a2646724c17218eabd7cc47d7887be341d46358fcf24126bd58b1024f06f89
+  - O=generic B=alpine36 P=libvirt V=1.8.50 H=c3b35202f19c6ae7c7e035e109f9d2c8c3baea24c30c6e2f148f69f36744355e
+  - O=generic B=alpine36 P=parallels V=1.8.50 H=d1cfb6e81191cd338c6b894d37cfee0df229ebcf15c46e81cc4c61f2260a22d6
+  - O=generic B=alpine36 P=virtualbox V=1.8.50 H=812f39639ad2c199b38fda7cd2a826fa1af920a2e426580a4ee5f721a4f9d25a
+  - O=generic B=alpine36 P=vmware_desktop V=1.8.50 H=83ddc7cf76db96e0140ed78b3eccb1012e1564e1f019a6457190871c04389e2c
+  - O=generic B=alpine37 P=hyperv V=1.8.50 H=05aa4bad7e5188606cb354a7a1d2b3143c2a2c61a4b66d46a834199eac5556e3
+  - O=generic B=alpine37 P=libvirt V=1.8.50 H=a0791f41cd036777345dceef25fc99b1f03a2d5e10cf6bd12f0744354002a227
+  - O=generic B=alpine37 P=parallels V=1.8.50 H=3de5f6fb3e71b19c34c31889f70f019007fa791832af6307ffb7ba35c74ff148
+  - O=generic B=alpine37 P=virtualbox V=1.8.50 H=92c5427cc09d8d36f43b2e301bcb14b5eb8909dda8dfab30e9d8fcf79fac3745
+  - O=generic B=alpine37 P=vmware_desktop V=1.8.50 H=d5b1df56b196e7000f563a5068c16a1119f8cd6980996c60a644fca98207920a
+  - O=generic B=alpine38 P=hyperv V=1.8.50 H=36f3922cac3a54d5b93c7d606b6c7fd97e69d750350f37b6e9b24d527dd0e1aa
+  - O=generic B=alpine38 P=libvirt V=1.8.50 H=40e2eefaf1ae26b573e6b45cca9325c79fa5a48748ed17832f7d80fbbd023b15
+  - O=generic B=alpine38 P=parallels V=1.8.50 H=3edb59567f36384f290245f25bbc1f452defdf73db10dcd50103b5443576527b
+  - O=generic B=alpine38 P=virtualbox V=1.8.50 H=7a7e8e49fa7ab1709e9386beb0516a7c2f31166535f505e92ff9a46385954ccf
+  - O=generic B=alpine38 P=vmware_desktop V=1.8.50 H=b6b80ccd9070da84b895bd8f4b4a5ee5b1c6182fdbfa8c68e6962bc0e973c48d
+  - O=generic B=arch P=hyperv V=1.8.50 H=1a1650b0cf6f624d52ba3e5205bc79e45d2bdffe367c24877958dc32df86baa0
+  - O=generic B=arch P=libvirt V=1.8.50 H=daf8402a4aa146e0c006b21b359127af69d6320e6148fd60679f2e7e47ae4532
+  - O=generic B=arch P=parallels V=1.8.50 H=af89c62489146261ddf4d8ba2d166ae900ff49357866ecf8128c6a388fc56a0c
+  - O=generic B=arch P=virtualbox V=1.8.50 H=c594aaa3839cfc7df0db9f45ed0472525ef09a6fc3dedbe4b11ccec7f64e12d9
+  - O=generic B=arch P=vmware_desktop V=1.8.50 H=fc39590061afe7e51d6a5d05ba8f12478070c6a1f443e2d827b0046689282456
+  - O=generic B=centos6 P=hyperv V=1.8.50 H=a4fadfd70cfdbbd0cd18408f23cf640c91f629c029fc0eee1b81aa083150b579
+  - O=generic B=centos6 P=libvirt V=1.8.50 H=a096c7aa13ae309ee4f46cf337f05e7fa928a74507e0362ebe5e3a4e3a8891b2
+  - O=generic B=centos6 P=parallels V=1.8.50 H=8b3763d9e16c7572f84f0d837fc3ef8b24bb2b36a0e3e96704817750261c6ba1
+  - O=generic B=centos6 P=virtualbox V=1.8.50 H=9b24ecaff1ec04f68d72207f0bb5f51e4158d3552b0199dd430526977cc9dcce
+  - O=generic B=centos6 P=vmware_desktop V=1.8.50 H=1d189b32e9ce51d05aa3de0beca5f3a8f0f12037af8b042151a5b235ce94c369
   - O=generic B=centos7 P=hyperv V=1.8.50 H=a065ccf1d9088915d23c6fe2867c2faea28685f01a81498db6fb28e23018a570
   - O=generic B=centos7 P=libvirt V=1.8.50 H=7b71f154202b6d69878539412eee75e04a4903e697aef3c6fefe4a18ae57aa0e
   - O=generic B=centos7 P=parallels V=1.8.50 H=500f29c5990526b14b3335d1196384874ae80818b136896d797740d27237e049
   - O=generic B=centos7 P=virtualbox V=1.8.50 H=f5fcf13a8091d746f223129e846c957ea0efeb2b61fc39c0d394e28a4c13b43e
+  - O=generic B=centos7 P=vmware_desktop V=1.8.50 H=0604243560635a4f5b953249d50444581c687e7bd83350c79847d56acc3dd8dd
+  - O=generic B=debian8 P=hyperv V=1.8.50 H=5b5ea7a5eb91af1c4e7ce0fd787c86604b38df23c73ee73d29cd60328a2b2215
+  - O=generic B=debian8 P=libvirt V=1.8.50 H=ea4f09df2dddf1eeda963131c9063594bfb145652b16dd098151d6ac947a35ac
+  - O=generic B=debian8 P=parallels V=1.8.50 H=60a305eff914422c10db71257decc4a575d6f0ec2587d6b9d0bce387a4566a4d
+  - O=generic B=debian8 P=virtualbox V=1.8.50 H=19f8109b8c7524ef02d4b22bd80295bf2ab2e687dd005dab74b37367335d7801
+  - O=generic B=debian8 P=vmware_desktop V=1.8.50 H=26bddafe0fac9c45ba1d5f3500a1bd624225de2e8332e8fe584764eab026ba3e
+  - O=generic B=debian9 P=hyperv V=1.8.50 H=3ab2ea315ea3d806bd68bf6452f899ce6492b21e4a88705910031c26c98193eb
+  - O=generic B=debian9 P=libvirt V=1.8.50 H=4154b47fe84be2a31b7a0b4424be898f280f94ffec00b0320e6ddac097d018e6
+  - O=generic B=debian9 P=parallels V=1.8.50 H=20f8870caa3fc52876d671c8138e9067ddaef2eea1694cd3f1f7a2e101e2ba9a
+  - O=generic B=debian9 P=virtualbox V=1.8.50 H=50330fe964ef257c762ea196e9a327df469fbf3a4943eb5cc1ebe15e70665e7a
+  - O=generic B=debian9 P=vmware_desktop V=1.8.50 H=0dad4279366c487955c1a0b316cdde9efba6e7f32608394ab35cec93f30242da
+  - O=generic B=dragonflybsd5 P=libvirt V=1.8.50 H=85750e90317e9d9e054208425eb8a912ab55ad4b98e4608f1155960ee3690c0f
+  - O=generic B=dragonflybsd5 P=parallels V=1.8.50 H=1dbbf3d36598208482df9eabffe2a31c5b53276de809762f848802b942005653
+  - O=generic B=dragonflybsd5 P=virtualbox V=1.8.50 H=112a46b3797a13450815d560b4e8a6b3b7deac69b4e74d1d6c0f236dc61d0b35
+  - O=generic B=dragonflybsd5 P=vmware_desktop V=1.8.50 H=757542d8b6f97311f55e17a61ba16be2b335c526445481387119fb615599e297
+  - O=generic B=fedora25 P=hyperv V=1.8.50 H=52e05e35add3f9fcd487d5999a5c30c4d0fb4bddafad0078fb8c48fb72fe8eaa
+  - O=generic B=fedora25 P=libvirt V=1.8.50 H=b4bf9985d8490334a253f7cbaa1ff355007503c1f191ab0e9b4502c6b8338e6b
+  - O=generic B=fedora25 P=parallels V=1.8.50 H=bfbd8810053e1edf8731ea9df30268e716a43d69e2f8d62fa323df121c47833b
+  - O=generic B=fedora25 P=virtualbox V=1.8.50 H=f407b07194cc6996a7c98b953208a3cf70cde042d0f7288e37fad87e14b2f5fd
+  - O=generic B=fedora25 P=vmware_desktop V=1.8.50 H=bd5fbda0e3804e60fb771095e6ce16f63af0ec64cf54aec00ba70ef4df30d8ab
 notifications:
   email:
     recipients:
