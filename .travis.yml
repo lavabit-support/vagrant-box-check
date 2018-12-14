@@ -334,7 +334,7 @@ script:
   - wait $GENERIC_UBUNTU1810_PARALLELS_PID
   - wait $GENERIC_UBUNTU1810_VIRTUALBOX_PID
   - wait $GENERIC_UBUNTU1810_VMWARE_PID
-- ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "roboxes-alpine35-hyperv failed" | tee -a failure.log); echo "roboxes-alpine35-hyperv complete") & ROBOXES_ALPINE35_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "roboxes-alpine35-libvirt failed" | tee -a failure.log); echo "roboxes-alpine35-libvirt complete") & ROBOXES_ALPINE35_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/roboxes/boxes/alpine35/versions/${VERSION}/providers/parallels.box > /dev/null || (echo "roboxes-alpine35-parallels failed" | tee -a failure.log); echo "roboxes-alpine35-parallels complete") & ROBOXES_ALPINE35_PARALLELS_PID=$!
@@ -655,7 +655,7 @@ script:
   - wait $ROBOXES_UBUNTU1810_PARALLELS_PID
   - wait $ROBOXES_UBUNTU1810_VIRTUALBOX_PID
   - wait $ROBOXES_UBUNTU1810_VMWARE_PID
-- ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/docker.box > /dev/null || (echo "lavabit-magma-docker failed" | tee -a failure.log); echo "lavabit-magma-docker complete") & LAVABIT_MAGMA_DOCKER_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "lavabit-magma-hyperv failed" | tee -a failure.log); echo "lavabit-magma-hyperv complete") & LAVABIT_MAGMA_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lavabit/boxes/magma/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "lavabit-magma-libvirt failed" | tee -a failure.log); echo "lavabit-magma-libvirt complete") & LAVABIT_MAGMA_LIBVIRT_PID=$!
@@ -752,7 +752,7 @@ script:
   - wait $LAVABIT_MAGMA_UBUNTU1704_LIBVIRT_PID
   - wait $LAVABIT_MAGMA_UBUNTU1704_VIRTUALBOX_PID
   - wait $LAVABIT_MAGMA_UBUNTU1704_VMWARE_PID
-- ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "lineage-lineage-hyperv failed" | tee -a failure.log); echo "lineage-lineage-hyperv complete") & LINEAGE_LINEAGE_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "lineage-lineage-libvirt failed" | tee -a failure.log); echo "lineage-lineage-libvirt complete") & LINEAGE_LINEAGE_LIBVIRT_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/lineage/boxes/lineage/versions/${VERSION}/providers/virtualbox.box > /dev/null || (echo "lineage-lineage-virtualbox failed" | tee -a failure.log); echo "lineage-lineage-virtualbox complete") & LINEAGE_LINEAGE_VIRTUALBOX_PID=$!
