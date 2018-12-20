@@ -13,7 +13,6 @@ notifications:
     on_failure: change
 script:
   - touch failure.log
-  - ulimit -a
   - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown  
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-alpine35-hyperv failed" | tee -a failure.log); echo "generic-alpine35-hyperv complete") & GENERIC_ALPINE35_HYPERV_PID=$!
   - (curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 2700 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-alpine35-libvirt failed" | tee -a failure.log); echo "generic-alpine35-libvirt complete") & GENERIC_ALPINE35_LIBVIRT_PID=$!
