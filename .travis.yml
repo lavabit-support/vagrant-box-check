@@ -801,7 +801,7 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_LIBVIRT_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
-  - ifconfig
+  - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
   - export RESULT=`cat failure.log | wc -l`
   - cat failure.log | sort
   - echo "Version ${VERSION}"
