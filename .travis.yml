@@ -6,12 +6,11 @@ env:
 matrix:
   include:
     - stage: trusty
+      name: trusty
       dist: trusty
     - stage: xenial
       dist: xenial
-      install:
-        - sudo apt-get update
-        - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install net-tools
+      name: xenial
 notifications:
   email:
     recipients:
@@ -802,8 +801,8 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_LIBVIRT_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
+  - ifconfig
   - export RESULT=`cat failure.log | wc -l`
-  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - cat failure.log | sort
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
