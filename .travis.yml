@@ -5,13 +5,12 @@ env:
   - VERSION="1.8.54"
 matrix:
   include:
-    - stage: trusty
+    - name: Trusty 1.8.54
+      stage: Trusty
       dist: trusty
-    - stage: xenial
+    - name: Xenial 1.8.54
+      stage: Xenial
       dist: xenial
-      install:
-        - sudo apt-get update
-        - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install net-tools
 notifications:
   email:
     recipients:
@@ -802,8 +801,8 @@ script:
   - wait $LINEAGEOS_LINEAGE_NASH_LIBVIRT_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VIRTUALBOX_PID
   - wait $LINEAGEOS_LINEAGE_NASH_VMWARE_PID
+  - ifconfig
   - export RESULT=`cat failure.log | wc -l`
-  - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - cat failure.log | sort
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
