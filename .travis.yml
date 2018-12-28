@@ -10,6 +10,9 @@ matrix:
     - stage: xenial
       os: linux
       dist: xenial
+      install:
+        - sudo apt-get update
+        - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install net-tools
 notifications:
   email:
     recipients:
