@@ -1,3 +1,4 @@
+os: linux
 language: c
 compiler: gcc
 env:
@@ -5,10 +6,8 @@ env:
 matrix:
   include:
     - stage: trusty
-      os: linux
       dist: trusty
     - stage: xenial
-      os: linux
       dist: xenial
       install:
         - sudo apt-get update
