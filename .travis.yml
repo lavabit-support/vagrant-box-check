@@ -174,7 +174,7 @@ notifications:
 script:
   - touch failure.log
   - (for ((i = 0; i < 60; ++i)); do date ; sleep 480; done) & LOOP_PID=$! ; disown
-  -  HASH=`curl --silent --location --retry 10 --retry-delay 120 --max-redirs 10 --user-agent "${AGENT}" https://vagrantcloud.com/$O/boxes/$B/versions/$V/providers/$P.box | sha256sum | tr -d '  -'`
+  - HASH=`curl --silent --location --retry 10 --retry-delay 120 --max-redirs 10 --user-agent "${AGENT}" https://vagrantcloud.com/$O/boxes/$B/versions/$V/providers/$P.box | sha256sum | tr -d '  -'`
   - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
   - if [ "$HASH" != "$H" ]; then echo $O $B $P $V failed | tee failure.log ; fi
   - export RESULT=`cat failure.log | wc -l`
