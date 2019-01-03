@@ -2,8 +2,8 @@ os: linux
 language: c
 compiler: gcc
 env:
+  - VERSION="1.8.52"
   - VERSION="1.8.54"
-bundler_args: --jobs 16 --retry 10
 matrix:
   include:
     - name: Trusty 1.8.54
