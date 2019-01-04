@@ -22,7 +22,7 @@ script:
   - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
   - function download() { HASH="`travis_retry curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
   - download generic alpine35 hyperv 1.8.54 328cf4f21909aa29958fd776982977aed7be5a1175d54d3e388ece50f6e74e6b &
-  - download generic alpine35 libvirt 1.8.54 4e31df1ce2107cde538f205b962172375f87b7add9b8ce16ae26ec1263881320 &
+  - download generic alpine35 libvirt 1.8.54 4e31df1ce2107cde538f205b962172375f87b7add9b8ce16ae26ec1263881319 &
   - download generic alpine35 parallels 1.8.54 e488311ab1be62a9a6f9defabe83f34058ca04671c615303aefd4c47b56803ea &
   - download generic alpine35 virtualbox 1.8.54 d64f180bc9c20e530bcdd8eccf4229117a4ee5e78930f5bdc4ede718c95e6307 &
   - download generic alpine35 vmware_desktop 1.8.54 18e053ad6cd053c4ed65118e1eb7a684b4a14b7f7cb113c60de34d9c8c4df9b1 &
