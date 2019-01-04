@@ -184,13 +184,12 @@ matrix:
         - download generic ubuntu1810 virtualbox 1.8.54 3a53a83bcf0885b12b1f2101b119a931cc34fd42ef26962337274e3a740b0e47 &
         - download generic ubuntu1810 vmware_desktop 1.8.54 1735856a83afd9688365cf8eb0d6549677be6de077bd43f5113147813bf5a20c &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Trusty Roboxes 1.8.54
       stage: Trusty
       dist: trusty
@@ -367,13 +366,12 @@ matrix:
         - download roboxes ubuntu1810 virtualbox 1.8.54 56fbe6560459482a4d63691b54960a4848cb360e4f7c5bae2b2c8847d981e36d &
         - download roboxes ubuntu1810 vmware_desktop 1.8.54 685bb4a895d1044a16aaf8c2836df2e539b451534fc42d81b89e85bcf7655f16 &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Trusty Magma 1.8.54
       stage: Trusty
       dist: trusty
@@ -433,13 +431,12 @@ matrix:
         - download lavabit magma-ubuntu1704 virtualbox 1.8.54 6240fa6de731ecc1f7410cee34e2f1889bbbaa663d45be7a685691c94856c574 &
         - download lavabit magma-ubuntu1704 vmware_desktop 1.8.54 4c4bda886261ed9965be3aae2b7d988cc1cb81d25b008dfcb758a6e18791c9a6 &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Trusty Lineage 1.8.54
       stage: Trusty
       dist: trusty
@@ -465,13 +462,12 @@ matrix:
         - download lineageos lineage-nash virtualbox 1.8.54 3f7011b094660ad8c512a883c359ff91881b4683204621efa0e156b8960842da &
         - download lineageos lineage-nash vmware_desktop 1.8.54 9b26556299c09474a33df7f0b66fa8312c95f76557057f4715e02963c66d28a2 &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Xenial Generic 1.8.54
       stage: Xenial
       dist: xenial
@@ -646,13 +642,12 @@ matrix:
         - download generic ubuntu1810 virtualbox 1.8.54 3a53a83bcf0885b12b1f2101b119a931cc34fd42ef26962337274e3a740b0e47 &
         - download generic ubuntu1810 vmware_desktop 1.8.54 1735856a83afd9688365cf8eb0d6549677be6de077bd43f5113147813bf5a20c &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Xenial Roboxes 1.8.54
       stage: Xenial
       dist: xenial
@@ -830,13 +825,12 @@ matrix:
         - download roboxes ubuntu1810 vmware_desktop 1.8.54 685bb4a895d1044a16aaf8c2836df2e539b451534fc42d81b89e85bcf7655f16 &
         - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Xenial Magma 1.8.54
       stage: Xenial
       dist: xenial
@@ -896,13 +890,12 @@ matrix:
         - download lavabit magma-ubuntu1704 virtualbox 1.8.54 6240fa6de731ecc1f7410cee34e2f1889bbbaa663d45be7a685691c94856c574 &
         - download lavabit magma-ubuntu1704 vmware_desktop 1.8.54 4c4bda886261ed9965be3aae2b7d988cc1cb81d25b008dfcb758a6e18791c9a6 &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
-        - exit 0
     - name: Xenial Lineage 1.8.54
       stage: Xenial
       dist: lineage
@@ -928,7 +921,7 @@ matrix:
         - download lineageos lineage-nash virtualbox 1.8.54 3f7011b094660ad8c512a883c359ff91881b4683204621efa0e156b8960842da &
         - download lineageos lineage-nash vmware_desktop 1.8.54 9b26556299c09474a33df7f0b66fa8312c95f76557057f4715e02963c66d28a2 &
         - wait
-        - ifconfig eth0 | grep --extended-regexp --color=none "RX bytes|TX bytes"
+        - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
         - echo "Version ${VERSION}"
