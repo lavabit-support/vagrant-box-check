@@ -884,7 +884,7 @@ matrix:
         - export RESULT=`cat failure.log | wc -l`
         - if [[ $RESULT != 0 ]]; then exit 1; fi
     - name: Xenial Lineage 1.8.54
-      stage: Lineage
+      stage: Xenial
       dist: lineage
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
