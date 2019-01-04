@@ -108,7 +108,7 @@ script:
   - download generic freebsd12 parallels 1.8.54 6534e41b7cc279b7d4b16278f002d707880f27b68b665a1b8c7bea7a26a70729 &
   - download generic freebsd12 virtualbox 1.8.54 3c62e519f8531d92fc010b7183d5b74d058417cafb2f3648610b2ad26e905ea5 &
   - download generic freebsd12 vmware_desktop 1.8.54 3c463ab1c83921cfa9ab5a8b4d792454250913c103f7c792fa5d528f7ea731d0 &
-  - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "16" ]]; then break ; fi ; done
+  - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
   - download generic gentoo hyperv 1.8.54 5090b49c26c633170e7e6a74d589933599acf8f032330b037163eec34b694596 &
   - download generic gentoo libvirt 1.8.54 57adb396c8dcee72d41dd224258e11d5673ab42c2f224af554afbc49a640a2f2 &
   - download generic gentoo parallels 1.8.54 dfe4eb88e210229ad404b53ff57a7caa1ab2536f5d24843f5e09b9dbf7aa007a &
@@ -154,7 +154,7 @@ script:
   - download generic rhel8 parallels 1.8.54 d56676669b56d21a3e0fb535cbb545e504cd1cfb691c59826167ddbc8380dba1 &
   - download generic rhel8 virtualbox 1.8.54 ba2bd574dc63fbeea657f536b355944d2979b947ab853695ae57a46acca643b5 &
   - download generic rhel8 vmware_desktop 1.8.54 643b4a28a7131d48490f4b134db09031af7fdaa598f3897fa05dfddefc8867ac &
-  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "16" ]]; then break ; fi ; done
+  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
   - download generic ubuntu1604 hyperv 1.8.54 09a292fa4b7249ded744e9151ce49c6fc75f3e2d28d5f21886d10dfec792381a &
   - download generic ubuntu1604 libvirt 1.8.54 8b473f9c236d4863d40da03c5ef53abb1646d504d077f4a8c75186f25cd0fbf1 &
   - download generic ubuntu1604 parallels 1.8.54 879882a7c3c178b489e6f8d0d9832774f573b7a1e95d48f2d43b0dd2ee6dfbc8 &
@@ -205,7 +205,7 @@ script:
   - download roboxes alpine38 parallels 1.8.54 1d156499c6a732c2ed43991f6da2630424ca575d488de260240b7e9a620137e7 &
   - download roboxes alpine38 virtualbox 1.8.54 f3d49eccdc0a9a7fddcf344b9216132172084a98cf21e18d6c9fc96d718bf3e2 &
   - download roboxes alpine38 vmware_desktop 1.8.54 29e30179bfc564e36be3e509c5aa1cb1d5aa442f6abc1cef524fae8d05fcd353 &
-  - while true; do sleep 20; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "16" ]]; then break ; fi ; done
+  - while true; do sleep 20; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
   - download roboxes arch hyperv 1.8.54 f99324b2930e9c080138d28f1a8e26fab8ff43db93ff4d678752a4db9f8bfe65 &
   - download roboxes arch libvirt 1.8.54 8a901e9d717d2e7fcf09b583c1d2ae66f3ebc0b8aa883755200c75a4ab63d026 &
   - download roboxes arch parallels 1.8.54 f5943fdccf6af6bcad738d81153a407574ce10835c633508a3eb6ffdab42f047 &
@@ -273,7 +273,7 @@ script:
   - download roboxes freebsd12 parallels 1.8.54 1cb255adcd675cb4647f280fcdc44a5953e86c0fd7c9876ead79a8ed1aa533aa &
   - download roboxes freebsd12 virtualbox 1.8.54 819ae6fba7bb9cb455996beaad7cd5f4eddfc07296867ecb38d34483877d79dc &
   - download roboxes freebsd12 vmware_desktop 1.8.54 b4b639f384be63a36e7be5523899c0f3253a7a8151c11de6dd7bb50d836bffee &
-  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "16" ]]; then break ; fi ; done
+  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
   - download roboxes gentoo hyperv 1.8.54 2647f6f3b187b86bbcd9f985a38277b0f08e8662dd4344f5b7cc3b81aea8d5dd &
   - download roboxes gentoo libvirt 1.8.54 5638430ea1c8c38a2219e3417378f6128e86491a08abb2cedbf15984835c601b &
   - download roboxes gentoo parallels 1.8.54 ca48bc022010178a4e165692bcbc1e79f3fa6d17d787e3a9b8166d440684cc2c &
@@ -349,7 +349,7 @@ script:
   - download roboxes ubuntu1810 parallels 1.8.54 7a25adfd38fe476cb2a06331cdc26248299a62aa83e142124ab4a3cfdf4f9cf4 &
   - download roboxes ubuntu1810 virtualbox 1.8.54 56fbe6560459482a4d63691b54960a4848cb360e4f7c5bae2b2c8847d981e36d &
   - download roboxes ubuntu1810 vmware_desktop 1.8.54 685bb4a895d1044a16aaf8c2836df2e539b451534fc42d81b89e85bcf7655f16 &
-  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "16" ]]; then break ; fi ; done
+  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
   - download lavabit magma docker 1.8.54 300ae8876314f77027cfceb731292127d34834c90f58d38062171e797ccbeeb0 &
   - download lavabit magma hyperv 1.8.54 420f53e7e7875e651ac7543a14bf1289a3755891f32217bc8b556c41a8f6ebae &
   - download lavabit magma libvirt 1.8.54 47560e61ce9d14b9927524039ac2cdff1a150aa129fca89e065f06dddf934eda &
@@ -398,7 +398,7 @@ script:
   - download lavabit magma-ubuntu1704 libvirt 1.8.54 7c7eb3da313146c11841d216669777700ecba4b470b1a8a75eb07b0bde2cfd7a &
   - download lavabit magma-ubuntu1704 virtualbox 1.8.54 6240fa6de731ecc1f7410cee34e2f1889bbbaa663d45be7a685691c94856c574 &
   - download lavabit magma-ubuntu1704 vmware_desktop 1.8.54 4c4bda886261ed9965be3aae2b7d988cc1cb81d25b008dfcb758a6e18791c9a6 &
-  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "16" ]]; then break ; fi ; done
+  - while true; do sleep 20 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
   - download lineage lineage hyperv 1.8.54 3b9000ebbcfdfd34eeabf2a806413536861c1acded0b00274b6cdd7ced5b561b &
   - download lineage lineage libvirt 1.8.54 8cb64886d9a4d0f67c558e6e0e0ed8d8bf3a8f485f1deb361b6bc3d3c39f61ed &
   - download lineage lineage virtualbox 1.8.54 27db9fb8251e0f06b616f210cf87c8e18ccdb99aca95d26c000ef9d3d40f7a49 &
