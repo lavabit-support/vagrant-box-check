@@ -414,7 +414,8 @@ script:
   - download lineageos lineage-nash hyperv 1.8.54 9099ad7ccd6bca0f08bbe4331e0f9343696eaa61a304955b1d9cd68ceab6afac &
   - download lineageos lineage-nash libvirt 1.8.54 e5ba6a63daac71b106e509b6b442bed9ecd43b8171a5137e6c6ebe46051232ee &
   - download lineageos lineage-nash virtualbox 1.8.54 3f7011b094660ad8c512a883c359ff91881b4683204621efa0e156b8960842da &
-  - download lineageos lineage-nash vmware_desktop 1.8.54 9b26556299c09474a33df7f0b66fa8312c95f76557057f4715e02963c66d28a2
+  - download lineageos lineage-nash vmware_desktop 1.8.54 9b26556299c09474a33df7f0b66fa8312c95f76557057f4715e02963c66d28a2 &
+  - wait
   - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
   - export RESULT=`cat failure.log | wc -l`
   - cat failure.log | sort
