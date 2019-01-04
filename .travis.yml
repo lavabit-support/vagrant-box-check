@@ -1,5 +1,4 @@
 os: linux
-group: stable
 language: generic
 env:
   - VERSION="1.8.54"
@@ -191,6 +190,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Trusty Roboxes 1.8.54
       stage: Trusty
       dist: trusty
@@ -373,6 +373,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Trusty Magma 1.8.54
       stage: Trusty
       dist: trusty
@@ -438,6 +439,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Trusty Lineage 1.8.54
       stage: Trusty
       dist: trusty
@@ -469,6 +471,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Xenial Generic 1.8.54
       stage: Xenial
       dist: xenial
@@ -649,6 +652,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Xenial Roboxes 1.8.54
       stage: Xenial
       dist: xenial
@@ -832,6 +836,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Xenial Magma 1.8.54
       stage: Xenial
       dist: xenial
@@ -897,6 +902,7 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
     - name: Xenial Lineage 1.8.54
       stage: Xenial
       dist: lineage
@@ -928,3 +934,4 @@ matrix:
         - echo "Version ${VERSION}"
         - echo "Total Failures ${RESULT}"
         - if [[ $RESULT != 0 ]]; then exit 1; fi
+        - exit 0
