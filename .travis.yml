@@ -20,7 +20,7 @@ notifications:
 script:
   - touch failure.log ; function travis_result() { echo &> /dev/null ; }
   - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
-  - function download() { HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ] ; then printf "FAIL  : $1 $2 $3 $4\n" ; else printf "VALID : $1 $2 $3 $4\n" ; fi ; } ; export -f download
+  - function download() { HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
   - download generic alpine35 hyperv 1.8.54 328cf4f21909aa29958fd776982977aed7be5a1175d54d3e388ece50f6e74e6b &
   - download generic alpine35 libvirt 1.8.54 4e31df1ce2107cde538f205b962172375f87b7add9b8ce16ae26ec1263881320 &
   - download generic alpine35 parallels 1.8.54 e488311ab1be62a9a6f9defabe83f34058ca04671c615303aefd4c47b56803ea &
