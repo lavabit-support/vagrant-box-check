@@ -14,6 +14,7 @@ matrix:
       stage: Trusty
       dist: trusty
       script:
+        - curl --help
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - function download() { HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 60 ; HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
         - download generic alpine35 hyperv 1.8.54 328cf4f21909aa29958fd776982977aed7be5a1175d54d3e388ece50f6e74e6b &
