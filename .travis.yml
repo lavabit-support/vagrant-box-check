@@ -18,7 +18,8 @@ notifications:
     on_success: change
     on_failure: change
 script:
-  - touch failure.log ; function travis_result() { echo &> /dev/null ; } ; export -f travis_result
+  - touch failure.log 
+  - function travis_result() { echo &> /dev/null ; }
   - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
   - (travis_retry curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/hyperv.box > /dev/null || (echo "generic-alpine35-hyperv failed" | tee -a failure.log); echo "generic-alpine35-hyperv complete") & GENERIC_ALPINE35_HYPERV_PID=$!
   - (travis_retry curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/generic/boxes/alpine35/versions/${VERSION}/providers/libvirt.box > /dev/null || (echo "generic-alpine35-libvirt failed" | tee -a failure.log); echo "generic-alpine35-libvirt complete") & GENERIC_ALPINE35_LIBVIRT_PID=$!
@@ -881,4 +882,3 @@ script:
   - echo "Version ${VERSION}"
   - echo "Total Failures ${RESULT}"
   - if [[ $RESULT != 0 ]]; then exit 1; fi
-  - exit 0
