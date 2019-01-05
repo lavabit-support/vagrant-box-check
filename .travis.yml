@@ -14,7 +14,6 @@ matrix:
       stage: Trusty
       dist: trusty
       script:
-        - curl --help
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - function download() { HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 60 ; HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 600 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
         - download generic alpine35 hyperv 1.8.54 328cf4f21909aa29958fd776982977aed7be5a1175d54d3e388ece50f6e74e6b &
@@ -972,7 +971,7 @@ matrix:
         - download lavabit magma-centos hyperv 1.8.54 65eae112752b3ff5912ebd79d8c209023de8545d2e21037d02f1534f02d81428 &
         - download lavabit magma-centos libvirt 1.8.54 d630f8dbe2cf041aa6097310ff63da84576b71a0504230a2f3fc65a507e39698 &
         - download lavabit magma-centos virtualbox 1.8.54 b0af4ee32831b9a0be4d92134b4d7caff6b2d871f1c53e2770406c7f67fb863b &
-        - download lavabit magma-centos vmware_desktop 1.8.54s a50aa56a19be12e2329e0b217e25d33a0eb81c206c31c6949f32a7214f75456c &
+        - download lavabit magma-centos vmware_desktop 1.8.54 a50aa56a19be12e2329e0b217e25d33a0eb81c206c31c6949f32a7214f75456c &
         - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - download lavabit magma-centos6 docker 1.8.54 fb1320ef626c6ccf39560f39e40ace2d1d81df7f6ce89fc0f5aab1d70d5213af &
         - download lavabit magma-centos6 hyperv 1.8.54 6bf292676bf0bab1bb209e8ed648e97aafaf82830b6e672b856cd80f10233d88 &
