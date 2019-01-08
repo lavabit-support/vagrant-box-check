@@ -1,7 +1,5 @@
 os: linux
 language: generic
-env:
-  - VERSION="1.8.54"
 notifications:
   email:
     recipients:
