@@ -208,7 +208,6 @@ matrix:
         - download generic ubuntu1810 parallels 1.8.54 624f36e89352c441614977bc822004da65dbe4308e68b07ba89acc3b86e29f41 &
         - download generic ubuntu1810 virtualbox 1.8.54 3a53a83bcf0885b12b1f2101b119a931cc34fd42ef26962337274e3a740b0e47 &
         - download generic ubuntu1810 vmware_desktop 1.8.54 1735856a83afd9688365cf8eb0d6549677be6de077bd43f5113147813bf5a20c &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -417,7 +416,6 @@ matrix:
         - download roboxes ubuntu1810 parallels 1.8.54 7a25adfd38fe476cb2a06331cdc26248299a62aa83e142124ab4a3cfdf4f9cf4 &
         - download roboxes ubuntu1810 virtualbox 1.8.54 56fbe6560459482a4d63691b54960a4848cb360e4f7c5bae2b2c8847d981e36d &
         - download roboxes ubuntu1810 vmware_desktop 1.8.54 685bb4a895d1044a16aaf8c2836df2e539b451534fc42d81b89e85bcf7655f16 &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -491,7 +489,6 @@ matrix:
         - download lavabit magma-ubuntu1704 libvirt 1.8.54 7c7eb3da313146c11841d216669777700ecba4b470b1a8a75eb07b0bde2cfd7a &
         - download lavabit magma-ubuntu1704 virtualbox 1.8.54 6240fa6de731ecc1f7410cee34e2f1889bbbaa663d45be7a685691c94856c574 &
         - download lavabit magma-ubuntu1704 vmware_desktop 1.8.54 4c4bda886261ed9965be3aae2b7d988cc1cb81d25b008dfcb758a6e18791c9a6 &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -526,7 +523,6 @@ matrix:
         - download lineageos lineage-nash libvirt 1.8.54 e5ba6a63daac71b106e509b6b442bed9ecd43b8171a5137e6c6ebe46051232ee &
         - download lineageos lineage-nash virtualbox 1.8.54 3f7011b094660ad8c512a883c359ff91881b4683204621efa0e156b8960842da &
         - download lineageos lineage-nash vmware_desktop 1.8.54 9b26556299c09474a33df7f0b66fa8312c95f76557057f4715e02963c66d28a2 &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -735,7 +731,6 @@ matrix:
         - download generic ubuntu1810 parallels 1.8.54 624f36e89352c441614977bc822004da65dbe4308e68b07ba89acc3b86e29f41 &
         - download generic ubuntu1810 virtualbox 1.8.54 3a53a83bcf0885b12b1f2101b119a931cc34fd42ef26962337274e3a740b0e47 &
         - download generic ubuntu1810 vmware_desktop 1.8.54 1735856a83afd9688365cf8eb0d6549677be6de077bd43f5113147813bf5a20c &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -944,7 +939,6 @@ matrix:
         - download roboxes ubuntu1810 parallels 1.8.54 7a25adfd38fe476cb2a06331cdc26248299a62aa83e142124ab4a3cfdf4f9cf4 &
         - download roboxes ubuntu1810 virtualbox 1.8.54 56fbe6560459482a4d63691b54960a4848cb360e4f7c5bae2b2c8847d981e36d &
         - download roboxes ubuntu1810 vmware_desktop 1.8.54 685bb4a895d1044a16aaf8c2836df2e539b451534fc42d81b89e85bcf7655f16 &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -1018,7 +1012,6 @@ matrix:
         - download lavabit magma-ubuntu1704 libvirt 1.8.54 7c7eb3da313146c11841d216669777700ecba4b470b1a8a75eb07b0bde2cfd7a &
         - download lavabit magma-ubuntu1704 virtualbox 1.8.54 6240fa6de731ecc1f7410cee34e2f1889bbbaa663d45be7a685691c94856c574 &
         - download lavabit magma-ubuntu1704 vmware_desktop 1.8.54 4c4bda886261ed9965be3aae2b7d988cc1cb81d25b008dfcb758a6e18791c9a6 &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
@@ -1053,7 +1046,6 @@ matrix:
         - download lineageos lineage-nash libvirt 1.8.54 e5ba6a63daac71b106e509b6b442bed9ecd43b8171a5137e6c6ebe46051232ee &
         - download lineageos lineage-nash virtualbox 1.8.54 3f7011b094660ad8c512a883c359ff91881b4683204621efa0e156b8960842da &
         - download lineageos lineage-nash vmware_desktop 1.8.54 9b26556299c09474a33df7f0b66fa8312c95f76557057f4715e02963c66d28a2 &
-        - while true; do sleep 1 ; if [[ "`uptime | awk '{ gsub(/,/, ""); printf "%.0f\n", $9; }'`" -lt "8" ]]; then break ; fi ; done
         - wait
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
