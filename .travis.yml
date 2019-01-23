@@ -2,13 +2,13 @@ os: linux
 language: c
 compiler: gcc
 env:
-  - VERSION="1.8.56"
+  - VERSION="1.8.58"
 matrix:
   include:
-    - name: Trusty 1.8.56
+    - name: Trusty 1.8.58
       stage: Trusty
       dist: trusty
-    - name: Xenial 1.8.56
+    - name: Xenial 1.8.58
       stage: Xenial
       dist: xenial
 notifications:
