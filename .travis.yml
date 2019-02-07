@@ -179,7 +179,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "parallels" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "8fd9ce749c99c7815cdd1c122d32d3a13c4bafcc03466e57c0c0ce44a4eb0347" )
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "d4f38ee6aa6f8b8a6153c97559f2f0749f5587e77d8408cf9e1724134354cafd" )
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "1921f28f18907850a7f97787c3b5e73922740a4a67ba4db325dd4ba4e3ffe218" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -358,7 +358,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "parallels" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "068d5716f6f9bcf65f523f8285cb307d0a0dcfc63cc35ec9db46c852ab5baf0a" )
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "9527dd18b19c6cea8d92fecf9f7a148e42761e30d2cfd8216b07995c2e5c9a60" )
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "15770a9d4cd87fb1a976dd4954373264e1a6ab4beda595e4d8820276e36d05d1" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -423,7 +423,7 @@ matrix:
         - O=( "${O[@]}" "lavabit" ); B=( "${B[@]}" "magma-ubuntu1704" ); P=( "${P[@]}" "libvirt" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "235d1c0f9c6d2b7021682690c6cfdb0d54ad1d016277c4973b873b2b6aaf380f" )
         - O=( "${O[@]}" "lavabit" ); B=( "${B[@]}" "magma-ubuntu1704" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "5e3000c0023ebe5af9c2d417b5f272245598b0dd7831ba1d264a75196c7906b1" )
         - O=( "${O[@]}" "lavabit" ); B=( "${B[@]}" "magma-ubuntu1704" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "9e8a2e88a71e81ca6b20c3009178d598c5ab0620f5fec74f847ad431ef244729" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -456,7 +456,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "libvirt" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "b3fa3ceb6f959717650cd000766b82026f7895d24b05e18a961f7e91e27649c6" )
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "ce5ccab6956f0f9a07cf5bef3f2ca6f4b40dd3c9b96019c5398e2db7fb99c01c" )
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "1fc1857be7d26f317ba415790dcb6733a953e0106cf954dd6faa53c157bf0db9" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -635,7 +635,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "parallels" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "8fd9ce749c99c7815cdd1c122d32d3a13c4bafcc03466e57c0c0ce44a4eb0347" )
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "d4f38ee6aa6f8b8a6153c97559f2f0749f5587e77d8408cf9e1724134354cafd" )
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "1921f28f18907850a7f97787c3b5e73922740a4a67ba4db325dd4ba4e3ffe218" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -814,7 +814,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "parallels" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "068d5716f6f9bcf65f523f8285cb307d0a0dcfc63cc35ec9db46c852ab5baf0a" )
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "9527dd18b19c6cea8d92fecf9f7a148e42761e30d2cfd8216b07995c2e5c9a60" )
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "15770a9d4cd87fb1a976dd4954373264e1a6ab4beda595e4d8820276e36d05d1" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -879,7 +879,7 @@ matrix:
         - O=( "${O[@]}" "lavabit" ); B=( "${B[@]}" "magma-ubuntu1704" ); P=( "${P[@]}" "libvirt" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "235d1c0f9c6d2b7021682690c6cfdb0d54ad1d016277c4973b873b2b6aaf380f" )
         - O=( "${O[@]}" "lavabit" ); B=( "${B[@]}" "magma-ubuntu1704" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "5e3000c0023ebe5af9c2d417b5f272245598b0dd7831ba1d264a75196c7906b1" )
         - O=( "${O[@]}" "lavabit" ); B=( "${B[@]}" "magma-ubuntu1704" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "9e8a2e88a71e81ca6b20c3009178d598c5ab0620f5fec74f847ad431ef244729" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
@@ -912,7 +912,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "libvirt" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "b3fa3ceb6f959717650cd000766b82026f7895d24b05e18a961f7e91e27649c6" )
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "virtualbox" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "ce5ccab6956f0f9a07cf5bef3f2ca6f4b40dd3c9b96019c5398e2db7fb99c01c" )
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); V=( "${V[@]}" "1.8.60" ); H=( "${H[@]}" "1fc1857be7d26f317ba415790dcb6733a953e0106cf954dd6faa53c157bf0db9" )
-        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ::: "${O[@]}" ::: "${B[@]}" ::: "${P[@]}" ::: "${V[@]}" ::: "${H[@]}"
+        - parallel --jobs 8 --shuf --xapply download {1} {2} {3} {4} {5} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${V[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export RESULT=`cat failure.log | wc -l`
         - cat failure.log | sort
