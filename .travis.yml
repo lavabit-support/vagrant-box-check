@@ -12,7 +12,7 @@ matrix:
       stage: Trusty
       dist: trusty
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -191,7 +191,7 @@ matrix:
       stage: Trusty
       dist: trusty
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -370,7 +370,7 @@ matrix:
       stage: Trusty
       dist: trusty
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -435,7 +435,7 @@ matrix:
       stage: Trusty
       dist: trusty
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -468,7 +468,7 @@ matrix:
       stage: Xenial
       dist: xenial
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -647,7 +647,7 @@ matrix:
       stage: Xenial
       dist: xenial
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -826,7 +826,7 @@ matrix:
       stage: Xenial
       dist: xenial
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
@@ -891,7 +891,7 @@ matrix:
       stage: Xenial
       dist: lineage
       install:
-        - sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
       script:
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 256; ++i)); do sleep 20 ; printf "%s (%s )\n" "`date`" "`uptime`" ; done) & LOOP_PID=$! ; disown
