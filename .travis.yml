@@ -13,7 +13,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -194,7 +194,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -375,7 +375,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -442,7 +442,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -477,7 +477,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -658,7 +658,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -839,7 +839,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
@@ -906,7 +906,7 @@ matrix:
       dist: lineage
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - /opt/vagrant/embedded/bin/curl --version ; ldd /opt/vagrant/embedded/bin/curl ; /opt/vagrant/embedded/bin/curl --help 
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
