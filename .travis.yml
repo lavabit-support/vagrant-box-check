@@ -9,11 +9,12 @@ notifications:
 matrix:
   include:
     - name: Trusty Generic 1.8.60
-      stage: Trusty
+      stage: Hashes
       dist: trusty
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
@@ -188,11 +189,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Trusty Roboxes 1.8.60
-      stage: Trusty
+      stage: Hashes
       dist: trusty
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; return 0 ; } ; export -f download
@@ -367,11 +369,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Trusty Magma 1.8.60
-      stage: Trusty
+      stage: Hashes
       dist: trusty
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
@@ -432,11 +435,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Trusty Lineage 1.8.60
-      stage: Trusty
+      stage: Hashes
       dist: trusty
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
@@ -465,11 +469,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Xenial Generic 1.8.60
-      stage: Xenial
+      stage: Hashes
       dist: xenial
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 60 ; HASH="`curl --fail --silent --show-error --location --retry 16 --retry-delay 16 --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
@@ -644,11 +649,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Xenial Roboxes 1.8.60
-      stage: Xenial
+      stage: Hashes
       dist: xenial
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
@@ -823,11 +829,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Xenial Magma 1.8.60
-      stage: Xenial
+      stage: Hashes
       dist: xenial
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
@@ -888,11 +895,12 @@ matrix:
         - if [[ $RESULT != 0 ]]; then exit 1; fi
         - exit 0
     - name: Xenial Lineage 1.8.60
-      stage: Xenial
+      stage: Hashes
       dist: lineage
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
       script:
+        - curl --version ; ldd $(which curl) ; curl --help ; ls -1 /usr/lib/x86_64-linux-gnu/libcurl*
         - touch failure.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
         - function download() { HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; if [ $? != 0 ]; then sleep 96 ; HASH="`curl --fail --silent --show-error --location --max-redirs 16 --max-time 512 --user-agent "${AGENT}" https://vagrantcloud.com/$1/boxes/$2/versions/$4/providers/$3.box | sha256sum`" ; fi ; echo "$HASH" | grep --silent "$5" ; if [ $? != 0 ]; then printf "FAIL  - $1 $2 $3 $4\n" | tee -a failure.log ; else printf "VALID - $1 $2 $3 $4\n" ; fi ; } ; export -f download
