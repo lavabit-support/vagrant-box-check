@@ -1,7 +1,7 @@
 os: linux
 language: generic
 env:
-  - VERSION="1.8.60"
+  - VERSION="1.8.58"
 notifications:
   email:
     recipients:
@@ -10,7 +10,7 @@ notifications:
     on_failure: change
 matrix:
   include:
-    - name: TRUSTY / GENERIC / DOCKER / 1.8.60
+    - name: TRUSTY / GENERIC / DOCKER / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -29,7 +29,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / GENERIC / HYPERV / 1.8.60
+    - name: TRUSTY / GENERIC / HYPERV / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -78,7 +78,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / GENERIC / LIBVIRT / 1.8.60
+    - name: TRUSTY / GENERIC / LIBVIRT / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -127,7 +127,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / GENERIC / PARALLELS / 1.8.60
+    - name: TRUSTY / GENERIC / PARALLELS / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -176,7 +176,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / GENERIC / VIRTUALBOX / 1.8.60
+    - name: TRUSTY / GENERIC / VIRTUALBOX / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -225,7 +225,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / GENERIC / VMWARE / 1.8.60
+    - name: TRUSTY / GENERIC / VMWARE / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -274,7 +274,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / ROBOXES / DOCKER / 1.8.60
+    - name: TRUSTY / ROBOXES / DOCKER / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -293,7 +293,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / ROBOXES / HYPERV / 1.8.60
+    - name: TRUSTY / ROBOXES / HYPERV / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -342,7 +342,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / ROBOXES / LIBVIRT / 1.8.60
+    - name: TRUSTY / ROBOXES / LIBVIRT / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -391,7 +391,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / ROBOXES / PARALLELS / 1.8.60
+    - name: TRUSTY / ROBOXES / PARALLELS / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -440,7 +440,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / ROBOXES / VIRTUALBOX / 1.8.60
+    - name: TRUSTY / ROBOXES / VIRTUALBOX / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -489,7 +489,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / ROBOXES / VMWARE / 1.8.60
+    - name: TRUSTY / ROBOXES / VMWARE / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -538,7 +538,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / MAGMA / DOCKER / 1.8.60
+    - name: TRUSTY / MAGMA / DOCKER / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -559,7 +559,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / MAGMA / HYPERV / 1.8.60
+    - name: TRUSTY / MAGMA / HYPERV / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -587,7 +587,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / MAGMA / LIBVIRT / 1.8.60
+    - name: TRUSTY / MAGMA / LIBVIRT / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -615,7 +615,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / MAGMA / VIRTUALBOX / 1.8.60
+    - name: TRUSTY / MAGMA / VIRTUALBOX / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -643,7 +643,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / MAGMA / VMWARE / 1.8.60
+    - name: TRUSTY / MAGMA / VMWARE / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -671,7 +671,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / LINEAGE / HYPERV / 1.8.60
+    - name: TRUSTY / LINEAGE / HYPERV / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -692,7 +692,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / LINEAGE / LIBVIRT / 1.8.60
+    - name: TRUSTY / LINEAGE / LIBVIRT / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -713,7 +713,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / LINEAGE / VIRTUALBOX / 1.8.60
+    - name: TRUSTY / LINEAGE / VIRTUALBOX / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -734,7 +734,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: TRUSTY / LINEAGE / VMWARE / 1.8.60
+    - name: TRUSTY / LINEAGE / VMWARE / 1.8.58
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -755,7 +755,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / GENERIC / DOCKER / 1.8.60
+    - name: XENIAL / GENERIC / DOCKER / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -774,7 +774,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / GENERIC / HYPERV / 1.8.60
+    - name: XENIAL / GENERIC / HYPERV / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -823,7 +823,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / GENERIC / LIBVIRT / 1.8.60
+    - name: XENIAL / GENERIC / LIBVIRT / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -872,7 +872,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / GENERIC / PARALLELS / 1.8.60
+    - name: XENIAL / GENERIC / PARALLELS / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -921,7 +921,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / GENERIC / VIRTUALBOX / 1.8.60
+    - name: XENIAL / GENERIC / VIRTUALBOX / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -970,7 +970,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / GENERIC / VMWARE / 1.8.60
+    - name: XENIAL / GENERIC / VMWARE / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1019,7 +1019,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / ROBOXES / DOCKER / 1.8.60
+    - name: XENIAL / ROBOXES / DOCKER / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1038,7 +1038,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / ROBOXES / HYPERV / 1.8.60
+    - name: XENIAL / ROBOXES / HYPERV / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1087,7 +1087,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / ROBOXES / LIBVIRT / 1.8.60
+    - name: XENIAL / ROBOXES / LIBVIRT / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1136,7 +1136,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / ROBOXES / PARALLELS / 1.8.60
+    - name: XENIAL / ROBOXES / PARALLELS / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1185,7 +1185,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / ROBOXES / VIRTUALBOX / 1.8.60
+    - name: XENIAL / ROBOXES / VIRTUALBOX / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1234,7 +1234,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / ROBOXES / VMWARE / 1.8.60
+    - name: XENIAL / ROBOXES / VMWARE / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1283,7 +1283,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / MAGMA / DOCKER / 1.8.60
+    - name: XENIAL / MAGMA / DOCKER / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1304,7 +1304,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / MAGMA / HYPERV / 1.8.60
+    - name: XENIAL / MAGMA / HYPERV / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1332,7 +1332,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / MAGMA / LIBVIRT / 1.8.60
+    - name: XENIAL / MAGMA / LIBVIRT / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1360,7 +1360,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / MAGMA / VIRTUALBOX / 1.8.60
+    - name: XENIAL / MAGMA / VIRTUALBOX / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1388,7 +1388,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / MAGMA / VMWARE / 1.8.60
+    - name: XENIAL / MAGMA / VMWARE / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1416,7 +1416,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / LINEAGE / HYPERV / 1.8.60
+    - name: XENIAL / LINEAGE / HYPERV / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1437,7 +1437,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / LINEAGE / LIBVIRT / 1.8.60
+    - name: XENIAL / LINEAGE / LIBVIRT / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1458,7 +1458,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / LINEAGE / VIRTUALBOX / 1.8.60
+    - name: XENIAL / LINEAGE / VIRTUALBOX / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
@@ -1479,7 +1479,7 @@ matrix:
         - echo "Failures ${FAILED} / Retries ${RETRIES} / Passed ${PASSED}"
         - if [[ $FAILED != 0 ]]; then exit 1; fi
         - exit 0
-    - name: XENIAL / LINEAGE / VMWARE / 1.8.60
+    - name: XENIAL / LINEAGE / VMWARE / 1.8.58
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
