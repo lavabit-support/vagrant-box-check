@@ -2,6 +2,9 @@ os: linux
 language: generic
 env:
   - VERSION="1.8.60"
+  - VERSION="1.8.58"
+  - VERSION="1.8.56"
+  - VERSION="1.8.54"
 notifications:
   email:
     recipients:
