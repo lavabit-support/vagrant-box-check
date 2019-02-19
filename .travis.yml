@@ -13,7 +13,7 @@ matrix:
     - name: TRUSTY / GENERIC / DOCKER / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -37,7 +37,7 @@ matrix:
     - name: TRUSTY / GENERIC / HYPERV / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -91,7 +91,7 @@ matrix:
     - name: TRUSTY / GENERIC / LIBVIRT / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -145,7 +145,7 @@ matrix:
     - name: TRUSTY / GENERIC / PARALLELS / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -199,7 +199,7 @@ matrix:
     - name: TRUSTY / GENERIC / VIRTUALBOX / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -253,7 +253,7 @@ matrix:
     - name: TRUSTY / GENERIC / VMWARE / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -307,7 +307,7 @@ matrix:
     - name: TRUSTY / ROBOXES / DOCKER / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -331,7 +331,7 @@ matrix:
     - name: TRUSTY / ROBOXES / HYPERV / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -385,7 +385,7 @@ matrix:
     - name: TRUSTY / ROBOXES / LIBVIRT / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -439,7 +439,7 @@ matrix:
     - name: TRUSTY / ROBOXES / PARALLELS / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -493,7 +493,7 @@ matrix:
     - name: TRUSTY / ROBOXES / VIRTUALBOX / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -547,7 +547,7 @@ matrix:
     - name: TRUSTY / ROBOXES / VMWARE / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -601,7 +601,7 @@ matrix:
     - name: TRUSTY / MAGMA / DOCKER / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -623,7 +623,7 @@ matrix:
     - name: TRUSTY / MAGMA / HYPERV / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -652,7 +652,7 @@ matrix:
     - name: TRUSTY / MAGMA / LIBVIRT / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -681,7 +681,7 @@ matrix:
     - name: TRUSTY / MAGMA / VIRTUALBOX / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -710,7 +710,7 @@ matrix:
     - name: TRUSTY / MAGMA / VMWARE / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -739,7 +739,7 @@ matrix:
     - name: TRUSTY / LINEAGE / HYPERV / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -761,7 +761,7 @@ matrix:
     - name: TRUSTY / LINEAGE / LIBVIRT / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -783,7 +783,7 @@ matrix:
     - name: TRUSTY / LINEAGE / VIRTUALBOX / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -805,7 +805,7 @@ matrix:
     - name: TRUSTY / LINEAGE / VMWARE / 1.9.2
       dist: trusty
       install:
-        - sudo dmesg
+        - sudo ethtool eth0
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -827,7 +827,7 @@ matrix:
     - name: XENIAL / GENERIC / DOCKER / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -851,7 +851,7 @@ matrix:
     - name: XENIAL / GENERIC / HYPERV / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -905,7 +905,7 @@ matrix:
     - name: XENIAL / GENERIC / LIBVIRT / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -959,7 +959,7 @@ matrix:
     - name: XENIAL / GENERIC / PARALLELS / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1013,7 +1013,7 @@ matrix:
     - name: XENIAL / GENERIC / VIRTUALBOX / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1067,7 +1067,7 @@ matrix:
     - name: XENIAL / GENERIC / VMWARE / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1121,7 +1121,7 @@ matrix:
     - name: XENIAL / ROBOXES / DOCKER / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1145,7 +1145,7 @@ matrix:
     - name: XENIAL / ROBOXES / HYPERV / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1199,7 +1199,7 @@ matrix:
     - name: XENIAL / ROBOXES / LIBVIRT / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1253,7 +1253,7 @@ matrix:
     - name: XENIAL / ROBOXES / PARALLELS / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1307,7 +1307,7 @@ matrix:
     - name: XENIAL / ROBOXES / VIRTUALBOX / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1361,7 +1361,7 @@ matrix:
     - name: XENIAL / ROBOXES / VMWARE / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1415,7 +1415,7 @@ matrix:
     - name: XENIAL / MAGMA / DOCKER / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1437,7 +1437,7 @@ matrix:
     - name: XENIAL / MAGMA / HYPERV / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1466,7 +1466,7 @@ matrix:
     - name: XENIAL / MAGMA / LIBVIRT / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1495,7 +1495,7 @@ matrix:
     - name: XENIAL / MAGMA / VIRTUALBOX / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1524,7 +1524,7 @@ matrix:
     - name: XENIAL / MAGMA / VMWARE / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1553,7 +1553,7 @@ matrix:
     - name: XENIAL / LINEAGE / HYPERV / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1575,7 +1575,7 @@ matrix:
     - name: XENIAL / LINEAGE / LIBVIRT / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1597,7 +1597,7 @@ matrix:
     - name: XENIAL / LINEAGE / VIRTUALBOX / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
@@ -1619,7 +1619,7 @@ matrix:
     - name: XENIAL / LINEAGE / VMWARE / 1.9.2
       dist: xenial
       install:
-        - sudo dmesg
+        - sudo ethtool ens4
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
