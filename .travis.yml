@@ -13,7 +13,7 @@ matrix:
     - name: PRECISE / GENERIC / DOCKER / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -36,7 +36,7 @@ matrix:
     - name: PRECISE / GENERIC / HYPERV / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -89,7 +89,7 @@ matrix:
     - name: PRECISE / GENERIC / LIBVIRT / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -142,7 +142,7 @@ matrix:
     - name: PRECISE / GENERIC / PARALLELS / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -195,7 +195,7 @@ matrix:
     - name: PRECISE / GENERIC / VIRTUALBOX / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -248,7 +248,7 @@ matrix:
     - name: PRECISE / GENERIC / VMWARE / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -301,7 +301,7 @@ matrix:
     - name: PRECISE / ROBOXES / DOCKER / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -324,7 +324,7 @@ matrix:
     - name: PRECISE / ROBOXES / HYPERV / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -377,7 +377,7 @@ matrix:
     - name: PRECISE / ROBOXES / LIBVIRT / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -430,7 +430,7 @@ matrix:
     - name: PRECISE / ROBOXES / PARALLELS / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -483,7 +483,7 @@ matrix:
     - name: PRECISE / ROBOXES / VIRTUALBOX / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -536,7 +536,7 @@ matrix:
     - name: PRECISE / ROBOXES / VMWARE / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -589,7 +589,7 @@ matrix:
     - name: PRECISE / MAGMA / DOCKER / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -610,7 +610,7 @@ matrix:
     - name: PRECISE / MAGMA / HYPERV / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -638,7 +638,7 @@ matrix:
     - name: PRECISE / MAGMA / LIBVIRT / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -666,7 +666,7 @@ matrix:
     - name: PRECISE / MAGMA / VIRTUALBOX / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -694,7 +694,7 @@ matrix:
     - name: PRECISE / MAGMA / VMWARE / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -722,7 +722,7 @@ matrix:
     - name: PRECISE / LINEAGE / HYPERV / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -743,7 +743,7 @@ matrix:
     - name: PRECISE / LINEAGE / LIBVIRT / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -764,7 +764,7 @@ matrix:
     - name: PRECISE / LINEAGE / VIRTUALBOX / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -785,7 +785,7 @@ matrix:
     - name: PRECISE / LINEAGE / VMWARE / 1.9.2
       dist: precise
       install:
-        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
+        - travis_retry sudo apt update ; travis_retry sudo apt -y install libc6 parallel
         - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
