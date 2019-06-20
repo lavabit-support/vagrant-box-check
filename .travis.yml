@@ -54,6 +54,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "hyperv" );
@@ -93,6 +94,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "libvirt" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "libvirt" );
@@ -132,6 +134,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
@@ -171,6 +174,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "virtualbox" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "virtualbox" );
@@ -210,6 +214,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "vmware_desktop" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "vmware_desktop" );
@@ -267,6 +272,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "hyperv" );
@@ -306,6 +312,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "libvirt" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "libvirt" );
@@ -345,6 +352,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
@@ -384,6 +392,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "virtualbox" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "virtualbox" );
@@ -423,6 +432,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "vmware_desktop" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "vmware_desktop" );
@@ -559,6 +569,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "hyperv" );
@@ -598,6 +609,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "libvirt" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "libvirt" );
@@ -637,6 +649,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
@@ -676,6 +689,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "virtualbox" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "virtualbox" );
@@ -715,6 +729,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "vmware_desktop" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "vmware_desktop" );
@@ -772,6 +787,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "hyperv" );
@@ -811,6 +827,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "libvirt" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "libvirt" );
@@ -850,6 +867,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
@@ -889,6 +907,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "virtualbox" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "virtualbox" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "virtualbox" );
@@ -928,6 +947,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora27" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora28" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora29" ); P=( "${P[@]}" "vmware_desktop" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "fedora30" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd11" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "vmware_desktop" );
