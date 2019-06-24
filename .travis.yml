@@ -302,7 +302,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "libvirt" );
-        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "libvirt" );
+        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "debian8" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "debian9" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "debian10" ); P=( "${P[@]}" "libvirt" );
