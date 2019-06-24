@@ -15,7 +15,7 @@ install:
   - printf 'Acquire::https::No-Cache "true";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
   - printf 'Acquire::http::Pipeline-Depth "200";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
   - printf 'Acquire::https::Pipeline-Depth "200";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
-  - (travis_retry sudo apt-get update && travis_retry sudo -E apt-get -y -q --no-install-suggests --no-install-recommends install curl parallel libc-bin) || ((sleep 120; sudo rm -rf /var/lib/apt/lists/* && sudo apt-get clean && travis_retry sudo apt-get update && travis_retry sudo -E apt-get -y -q --no-install-suggests --no-install-recommends install curl parallel libc-bin) || (sleep 120; sudo rm -rf /var/lib/apt/lists/* && sudo apt-get clean && travis_retry sudo apt-get -o Acquire::CompressionTypes::Order::=bz2 update && travis_retry sudo -E apt-get -y -q --no-install-suggests --no-install-recommends install curl parallel libc-bin))
+  - (travis_retry sudo apt-get update && travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends install curl parallel libc-bin) || ((sleep 120; sudo rm -rf /var/lib/apt/lists/* && sudo apt-get clean && travis_retry sudo apt-get update && travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends install curl parallel libc-bin) || (sleep 120; sudo rm -rf /var/lib/apt/lists/* && sudo apt-get clean && travis_retry sudo apt-get -o Acquire::CompressionTypes::Order::=bz2 update && travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends install curl parallel libc-bin))
   - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.4_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb ; sudo dpkg -i vagrant_2.2.4_x86_64.deb
 before_script:
   - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
@@ -31,7 +31,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "docker" );
         - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "docker" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "docker" );
@@ -40,7 +40,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "hyperv" );
@@ -64,7 +64,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "hyperv" );
@@ -120,7 +120,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "parallels" );
@@ -139,12 +139,12 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "hardenedbsd11" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "netbsd8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "parallels" );
@@ -249,7 +249,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "docker" );
         - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "docker" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "docker" );
@@ -258,7 +258,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "hyperv" );
@@ -282,7 +282,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "hyperv" );
@@ -302,7 +302,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "libvirt" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "libvirt" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "debian8" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "debian9" ); P=( "${P[@]}" "libvirt" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "debian10" ); P=( "${P[@]}" "libvirt" );
@@ -338,7 +338,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "parallels" );
@@ -357,12 +357,12 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "hardenedbsd11" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "netbsd8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "parallels" );
@@ -546,7 +546,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "docker" );
         - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "docker" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "docker" );
@@ -555,7 +555,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "hyperv" );
@@ -579,7 +579,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "hyperv" );
@@ -635,7 +635,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "parallels" );
@@ -654,12 +654,12 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "hardenedbsd11" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "netbsd8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "parallels" );
@@ -764,7 +764,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "docker" );
         - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "docker" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "docker" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "docker" );
@@ -773,7 +773,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "hyperv" );
@@ -797,7 +797,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "hyperv" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "hyperv" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "hyperv" );
@@ -853,7 +853,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine37" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine38" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine39" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "alpine310" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "arch" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "centos7" ); P=( "${P[@]}" "parallels" );
@@ -872,12 +872,12 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "freebsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "gentoo" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "hardenedbsd11" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "hardenedbsd12" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "netbsd8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "openbsd6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "opensuse42" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle7" ); P=( "${P[@]}" "parallels" );
-        - # O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
+        - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "oracle8" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel6" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel7" ); P=( "${P[@]}" "parallels" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "rhel8" ); P=( "${P[@]}" "parallels" );
