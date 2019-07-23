@@ -14,7 +14,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -33,7 +33,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -82,7 +82,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -131,7 +131,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -180,7 +180,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -229,7 +229,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -278,7 +278,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -297,7 +297,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -346,7 +346,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -395,7 +395,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -444,7 +444,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -493,7 +493,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -542,7 +542,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -563,7 +563,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -591,7 +591,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -619,7 +619,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -647,7 +647,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -675,7 +675,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -696,7 +696,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -717,7 +717,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -738,7 +738,7 @@ matrix:
       dist: trusty
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -759,7 +759,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -778,7 +778,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -827,7 +827,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -876,7 +876,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -925,7 +925,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -974,7 +974,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1023,7 +1023,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1042,7 +1042,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1091,7 +1091,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1140,7 +1140,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1189,7 +1189,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1238,7 +1238,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1287,7 +1287,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1308,7 +1308,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1336,7 +1336,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1364,7 +1364,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1392,7 +1392,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1420,7 +1420,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1441,7 +1441,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1462,7 +1462,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
@@ -1483,7 +1483,7 @@ matrix:
       dist: xenial
       install:
         - travis_retry sudo apt update ; travis_retry sudo apt -y install libc-bin parallel
-        - travis_retry wget https://releases.hashicorp.com/vagrant/2.2.3/vagrant_2.2.3_x86_64.deb ; sudo dpkg -i vagrant_2.2.3_x86_64.deb
+        - travis_retry curl --silent --show-error --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0" --output vagrant_2.2.5_x86_64.deb https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb ; sudo dpkg -i vagrant_2.2.5_x86_64.deb
       script:
         - touch failed.log ; touch retry.log ; touch passed.log ; function travis_result() { echo &> /dev/null ; }
         - (for ((i = 0; i < 48; ++i)); do sleep 60 ; printf "%s (%s )\n" "`ifconfig | grep --extended-regexp --color=none \"encap:Ethernet  HWaddr|RX bytes|TX bytes\" | head -n -1 | grep --extended-regexp --after-context=1 \"^e.*\" | tail -1`" "`uptime | sed \"s/.*load average/load/g\"`" ; done) & LOOP_PID=$! ; disown
