@@ -16,6 +16,7 @@ install:
   - printf 'Acquire::http::Pipeline-Depth "200";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
   - printf 'Acquire::https::Pipeline-Depth "200";\n' | sudo tee --append /etc/apt/apt.conf.d/99custom
   - sudo -E sed -i -e '/repo.mongodb.org/d' /etc/apt/sources.list /etc/apt/sources.list.d/*
+  - sudo -E sed -i -e '/apt.postgresql.org/d' /etc/apt/sources.list /etc/apt/sources.list.d/*
   - sudo -E sed -i -e '/ppa.launchpad.net\/couchdb/d' /etc/apt/sources.list /etc/apt/sources.list.d/*
   - sudo -E sed -i -e '/packagecloud.io\/github\/git-lfs/d' /etc/apt/sources.list /etc/apt/sources.list.d/*
   - echo "LS0tLS1CRUdJTiBQR1AgUFVCTElDIEtFWSBCTE9DSy0tLS0tCgptSTBFU3VCdlJ3RUVBTWk0Y0RiYTd4bEthYW9Yak8xbjFIWDhSS3JrVytIRUlsNzluU09TSnl2enlzYWpzN3pVCm93L096Q1FwOU5zd3FyRG1OdUgxK2xQVFRSTkFHdEs4cjJvdXEycm5YVDFtVGwyM2RwZ0haOXNwc2VSNzNzNFoKQkd3L2FnNGJwVTVkTlVTdHZmbUhoSWpWQ3VpU3BObjdjeXkxSlNTdlNzM04ybXh0ZUtqWExCZjdBQkVCQUFHMApHa3hoZFc1amFIQmhaQ0JVYjI5c1kyaGhhVzRnWW5WcGJHUnppTFlFRXdFQ0FDQUZBa3JnYjBjQ0d3TUdDd2tJCkJ3TUNCQlVDQ0FNRUZnSURBUUllQVFJWGdBQUtDUkFlazNlaXVwN3lmekdLQS80eHpVcU5BQ1NsQitrK0R4RkYKSHFrd0thL3ppRmlBbGtMUXl5aG0raXF6ODBodFJacjdMcy9aUllabDBhU1U1Ni9oTGUwVitUdmlKMXM4cWROMgpsYW1rS2RYSUFGZmF2QTA0bk9uVHp5SUJKODJFQVVUM05oNDVza014bzR6NGlaTU5tc3lhUXBObC9tL2xOdE9MCmhSNjR2NVp5Ym9mQjJFV2tNeFV6WDhEL0ZRPT0KPUxjVVEKLS0tLS1FTkQgUEdQIFBVQkxJQyBLRVkgQkxPQ0stLS0tLQo=" | sudo base64 -d | sudo apt-key add -
@@ -238,7 +239,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "422f5099e561025fe4d69482e83c1960f055ed8790214085ef123b5813d04a41" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "f2363e7333557f99729c98e008f3be52d48d7abac4357add5f8ed94a60f9028b" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "33be7fee1ca31cc7aff7c5e584d080840905224841b892d9de9aa6d706998318" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -455,7 +456,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a49b85275f31060a07e1596c86d6b1482e5b7084385c76bfa72bc55a39d47fac" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "fa5329607e0a062cb1b68c9c2e22d4a53663bc980aa83d5795008f03db522846" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "c5e6b7df65ba16e291cda84f900698c1b82a4463828a5a73b587097ba125fd74" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -529,7 +530,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "c8068d5d7d2f03334ddc71562e0bcc7587bbf22243c4d97f92cc609ebfc253b9" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "f0121e8e014c1fa38dc4b29f5956ffde13bf3d17afbbd7fda3fb5971a1c21e8c" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a44937e3fb665c52181719685989c55050e28afcf713d409044578c3439b62e0" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -746,7 +747,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "422f5099e561025fe4d69482e83c1960f055ed8790214085ef123b5813d04a41" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "f2363e7333557f99729c98e008f3be52d48d7abac4357add5f8ed94a60f9028b" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "33be7fee1ca31cc7aff7c5e584d080840905224841b892d9de9aa6d706998318" );
-        - parallel --jobs 10 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -963,7 +964,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a49b85275f31060a07e1596c86d6b1482e5b7084385c76bfa72bc55a39d47fac" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "fa5329607e0a062cb1b68c9c2e22d4a53663bc980aa83d5795008f03db522846" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "c5e6b7df65ba16e291cda84f900698c1b82a4463828a5a73b587097ba125fd74" );
-        - parallel --jobs 10 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1037,7 +1038,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "c8068d5d7d2f03334ddc71562e0bcc7587bbf22243c4d97f92cc609ebfc253b9" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "f0121e8e014c1fa38dc4b29f5956ffde13bf3d17afbbd7fda3fb5971a1c21e8c" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a44937e3fb665c52181719685989c55050e28afcf713d409044578c3439b62e0" );
-        - parallel --jobs 10 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.18" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1249,7 +1250,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "96e6b6a052bdeceecb64dcaa1c8a69d31742480643a59f0ab6747ed5fb81aeb6" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a95a82d5848a94c90cab891b8981d7298e61a56ccc0d0f72f0000547544957be" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "fd94578c08f7fe3d7bc25ffe960dec1a4a334c5b2b1a72fe195f67188593fe97" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1461,7 +1462,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "2dff20f057c3d213233a4efeca353815576b229b72e58928d7bad30729467196" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "3bce1df5108231a6e3747bbc85519a87de43d9bafb875267fe58d26319da489b" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "29bb0e96f70d8aeaa3c065bb25fa946e3ce548a613e54375253f2e69164f603a" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1535,7 +1536,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "ac65c974ee0d128649fb60a6f5199fce5395d99d6f0365fb55677f3799f33ac6" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a4ef32c228b9db9b90044605ac96f47e8d947997072f289ea2bac08bd3d30f7d" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "5061a47cd2790a3f0b2a1624ac4ad2b8ca6245173124733e5bf03cfa43669ef3" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1747,7 +1748,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "96e6b6a052bdeceecb64dcaa1c8a69d31742480643a59f0ab6747ed5fb81aeb6" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a95a82d5848a94c90cab891b8981d7298e61a56ccc0d0f72f0000547544957be" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "fd94578c08f7fe3d7bc25ffe960dec1a4a334c5b2b1a72fe195f67188593fe97" );
-        - parallel --jobs 10 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1959,7 +1960,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "2dff20f057c3d213233a4efeca353815576b229b72e58928d7bad30729467196" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "3bce1df5108231a6e3747bbc85519a87de43d9bafb875267fe58d26319da489b" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "29bb0e96f70d8aeaa3c065bb25fa946e3ce548a613e54375253f2e69164f603a" );
-        - parallel --jobs 10 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -2033,7 +2034,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "ac65c974ee0d128649fb60a6f5199fce5395d99d6f0365fb55677f3799f33ac6" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "a4ef32c228b9db9b90044605ac96f47e8d947997072f289ea2bac08bd3d30f7d" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "5061a47cd2790a3f0b2a1624ac4ad2b8ca6245173124733e5bf03cfa43669ef3" );
-        - parallel --jobs 10 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --no-notice --line-buffer --xapply download {1} {2} {3} "1.9.16" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -2497,7 +2498,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "49c3d4244c7b4dd6a6e38997c81cbabd00918c6f494804a5f2dfbc0c835b2c2a" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "c8f287d88441de3db783f04e5f02f93c24a9a3ecfc0a182679a6480a69e86e3f" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" ); H=( "${H[@]}" "3b62e0de7d7683e9c6bb7622c7426775b6a03e5b0f00f7392df1f9d03e2c85cd" );
-        - parallel --jobs 10 --line-buffer --xapply download {1} {2} {3} "1.9.8" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
+        - parallel --jobs 6 --line-buffer --xapply download {1} {2} {3} "1.9.8" {4} ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}" ":::" "${H[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
