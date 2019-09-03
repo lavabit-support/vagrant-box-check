@@ -245,7 +245,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.20" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.20" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -468,7 +468,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.20" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.20" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -547,7 +547,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.20" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.20" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1295,7 +1295,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.18" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.18" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1518,7 +1518,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.18" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.18" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -1597,7 +1597,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.18" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.18" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -2340,7 +2340,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.16" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.16" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -2558,7 +2558,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.16" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.16" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -2637,7 +2637,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.16" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.16" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -3348,7 +3348,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.10" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.10" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -3544,7 +3544,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.10" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.10" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -3618,7 +3618,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.10" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.10" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -4280,7 +4280,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.8" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.8" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -4476,7 +4476,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.8" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.8" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -4550,7 +4550,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.8" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.8" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -5212,7 +5212,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.6" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.6" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -5408,7 +5408,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.6" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.6" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -5482,7 +5482,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.6" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.6" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -6144,7 +6144,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.4" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.4" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -6340,7 +6340,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.4" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.4" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -6414,7 +6414,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.4" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.4" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -7076,7 +7076,7 @@ matrix:
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "generic" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.2" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.2" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -7272,7 +7272,7 @@ matrix:
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1804" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1810" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "roboxes" ); B=( "${B[@]}" "ubuntu1904" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.2" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.2" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
@@ -7346,7 +7346,7 @@ matrix:
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineage" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
         - O=( "${O[@]}" "lineageos" ); B=( "${B[@]}" "lineage-nash" ); P=( "${P[@]}" "vmware_desktop" );
-        - parallel --fg --wait --semaphorename $$ --line-buffer --jobs 12 --xapply download {1} {2} {3} "1.9.2" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
+        - parallel --fg --wait --jobs 12 --xapply download {1} {2} {3} "1.9.2" ":::" "${O[@]}" ":::" "${B[@]}" ":::" "${P[@]}"
         - ifconfig | grep --extended-regexp --color=none "encap:Ethernet  HWaddr|RX bytes|TX bytes" | head -n -1
         - export FAILED=`cat failed.log | wc -l` ; export RETRIES=`cat retry.log | wc -l` ; export PASSED=`cat passed.log | wc -l` ;
         - cat failed.log | sort
